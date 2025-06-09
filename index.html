@@ -6,7 +6,6 @@
   <title>AMP Image & Slider Demo</title>
   <link rel="canonical" href="https://example.com/demo.html" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css">
 
   <!-- AMP runtime -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -180,6 +179,48 @@
       text-decoration: none;
       font-size: 18px;
     }
+
+    .banner-wrapper {
+      height: 100vh;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner-image amp-img {
+      object-fit: cover;
+    }
+
+    .banner-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, #000 15%, transparent);
+      z-index: 1;
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1rem;
+      z-index: 2;
+    }
   </style>
 
 </head>
@@ -211,6 +252,13 @@
       </ul>
     </nav>
   </header>
+
+  <div class="banner-wrapper">
+    <amp-img src="images/banner.jpg" width="1920" height="695" layout="fill" class="banner-image"></amp-img>
+
+    <div class="gradient-overlay"></div>
+    <div class="overlay-text">#ClassicTwin</div>
+  </div>
 
   <!-- AMP Carousel -->
   <amp-carousel width="600" height="300" layout="responsive" type="slides" autoplay delay="3000" loop>
