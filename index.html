@@ -132,6 +132,7 @@
       position: relative;
       width: 70%;
       margin: auto;
+      margin-top: 20px;
     }
 
     .amp-slider .slide-text p {
@@ -142,6 +143,7 @@
     .amp-slider .slide-text h3 {
       color: #fff;
       text-align: left;
+      margin-top: 5px;
     }
 
     header {
@@ -156,6 +158,12 @@
       left: 0;
       width: 100%;
       z-index: 9;
+    }
+
+    @media(max-width:767px) {
+      header {
+        padding: 5px 0;
+      }
     }
 
     .logo {
@@ -303,6 +311,30 @@
       color: white;
       display: inline-block;
       margin-left: 8px;
+    }
+
+    .i-amphtml-standalone .menu-btn .hammer-close-icon {
+      display: none;
+    }
+
+    .i-amphtml-standalone.i-amphtml-scroll-disabled .menu-btn .hammer-close-icon {
+      display: inline-block;
+    }
+
+    .i-amphtml-standalone.i-amphtml-scroll-disabled .menu-btn .hammer-open-icon {
+      display: none;
+    }
+
+    .menu-btn amp-img{
+      min-width: 31px;
+      max-width: 31px;
+    }
+
+    .menu-btn amp-img img{
+      width: 100%;
+      height: auto;
+      margin: 7px 0;
+      min-width: 36px;
     }
 
     @media (min-width: 768px) {
@@ -809,7 +841,10 @@
       <button>
         <amp-img src="images/search.png" width="30" height="28" layout="fixed" alt="User"></amp-img>
       </button>
-      <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button>
+      <button class="menu-btn" on="tap:sidebar.toggle">
+        <amp-img src="images/nav-icon.png" width="45" height="36" layout="fixed" alt="open nav" class="hammer-open-icon"></amp-img>
+        <amp-img src="images/close.png" width="36" height="36" layout="fixed" alt="close nav" class="hammer-close-icon"></amp-img>
+      </button>
     </div>
   </header>
 
