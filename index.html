@@ -99,17 +99,49 @@
       text-align: center;
     }
 
-    amp-carousel {
+    .amp-slider amp-carousel {
       margin-top: 20px;
+      height: 100%;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
     }
 
-    amp-img {
+    .amp-slider amp-img {
       width: 100%;
       height: auto;
+      min-height: auto;
       display: block;
+    }
+
+    .amp-slider amp-img img {
+      height: auto;
+      min-height: auto;
+    }
+
+    .amp-slider .amp-carousel-slide {
+      height: auto;
+    }
+
+    .amp-slider .slide-text {
+      background: linear-gradient(114deg, rgb(33, 33, 33), rgb(13, 13, 13));
+      background-image: linear-gradient(90deg, rgb(77, 77, 77), rgb(22, 22, 22)) 1 / 1 / 0 stretch;
+      border-style: solid;
+      border-width: 1px;
+      padding: 20px;
+      position: relative;
+      width: 70%;
+      margin: auto;
+    }
+
+    .amp-slider .slide-text p {
+      color: #a7a7a7;
+      text-align: left;
+    }
+
+    .amp-slider .slide-text h3 {
+      color: #fff;
+      text-align: left;
     }
 
     header {
@@ -386,16 +418,16 @@
       color: #fff;
     }
 
-     .overlay-text h2{
+    .overlay-text h2 {
       font-size: 16px;
       font-weight: 600;
-     }
+    }
 
-     .overlay-text p{
+    .overlay-text p {
       font-weight: 400;
       font-size: 14px;
       color: #fff;
-     }
+    }
 
     .amp-engine {
       color: #fff;
@@ -740,14 +772,50 @@
   </div>
 
   <!-- AMP Carousel -->
-  <amp-carousel width="600" height="300" layout="responsive" type="slides" autoplay delay="3000" loop>
-    <amp-img src="https://cdn.pixabay.com/photo/2017/11/23/04/07/royal-enfield-2972005_1280.jpg" width="600"
-      height="300" layout="responsive" alt="Slide 1"></amp-img>
-    <amp-img src="https://cdn.pixabay.com/photo/2016/09/02/14/23/bike-rider-1639323_1280.jpg" width="600" height="300"
-      layout="responsive" alt="Slide 2"></amp-img>
-    <amp-img src="https://cdn.pixabay.com/photo/2021/01/15/17/19/royal-enfield-5919885_1280.jpg" width="600"
-      height="300" layout="responsive" alt="Slide 3"></amp-img>
-  </amp-carousel>
+  <div class="amp-slider">
+    <amp-carousel width="600" height="1100" layout="responsive" type="slides" autoplay delay="3000" loop>
+      <div>
+        <amp-img src="images/slide-1.png" width="430" height="423" layout="responsive" alt="Slide 1"></amp-img>
+        <div class="slide-text">
+          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
+            which offers the option of a removable passenger seat and subframe.</p>
+        </div>
+      </div>
+      <div>
+        <amp-img src="images/slide-2.png" width="421" height="412" layout="responsive" alt="Slide 2"></amp-img>
+        <div class="slide-text">
+          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
+            which offers the option of a removable passenger seat and subframe.</p>
+        </div>
+      </div>
+      <div>
+        <amp-img src="images/slide-3.png" width="421" height="415" layout="responsive" alt="Slide 3"></amp-img>
+        <div class="slide-text">
+          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
+            which offers the option of a removable passenger seat and subframe.</p>
+        </div>
+      </div>
+      <div>
+        <amp-img src="images/slide-4.png" width="422" height="407" layout="responsive" alt="Slide 4"></amp-img>
+        <div class="slide-text">
+          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
+            which offers the option of a removable passenger seat and subframe.</p>
+        </div>
+      </div>
+      <div>
+        <amp-img src="images/slide-5.png" width="425" height="412" layout="responsive" alt="Slide 5"></amp-img>
+        <div class="slide-text">
+          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
+            which offers the option of a removable passenger seat and subframe.</p>
+        </div>
+      </div>
+    </amp-carousel>
+  </div>
 
   <div class="gallery-main">
     <h3 class="gallery-title">Gallery</h3>
@@ -783,6 +851,7 @@
       <p>Find a salon</p>
     </a>
   </div>
+
   <footer>
     <div class="social">
       <p>Join the Conversation</p>
