@@ -366,16 +366,36 @@
 
     .overlay-text {
       position: absolute;
-      bottom: 50px;
+      bottom: 0;
       left: 0;
       right: 0;
       color: #fff;
       font-size: 2rem;
       margin: 0 auto;
       text-align: center;
-      padding: 1rem;
+      padding: 1rem 3rem;
       z-index: 2;
     }
+
+    .overlay-text h1 {
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0;
+      padding-bottom: 30px;
+      width: 100%;
+      color: #fff;
+    }
+
+     .overlay-text h2{
+      font-size: 16px;
+      font-weight: 600;
+     }
+
+     .overlay-text p{
+      font-weight: 400;
+      font-size: 14px;
+      color: #fff;
+     }
 
     .amp-engine {
       color: #fff;
@@ -489,15 +509,27 @@
       grid-template-columns: 1fr;
     }
 
+    @media (max-width: 600px) {
+      .gallery {
+        margin-bottom: 8px;
+      }
+    }
+
     .gallery img {
       width: 100%;
-      margin: 8px;
-
+      margin: 8px 0;
       padding: 8px;
     }
 
     .gallery.row {
       display: flex;
+    }
+
+    @media (max-width: 767px) {
+      .gallery.row {
+        gap: 15px;
+        margin-bottom: 8px;
+      }
     }
 
     .gallery.row amp-img {
@@ -549,6 +581,7 @@
       text-align: left;
       font-size: 10px;
       font-weight: 600;
+      color: #000;
     }
 
     .foot-nav {
@@ -681,10 +714,15 @@
   </header>
 
   <div class="banner-wrapper">
-    <amp-img src="images/banner.jpg" width="1920" height="695" layout="fill" class="banner-image"></amp-img>
+    <amp-img src="images/banner.avif" width="1920" height="695" layout="fill" class="banner-image"></amp-img>
 
     <div class="gradient-overlay"></div>
-    <div class="overlay-text">#ClassicTwin</div>
+    <div class="overlay-text">
+      <h1>#ClassicTwin</h1>
+      <h2>Royal Enfield Classic 650</h2>
+      <p>Twice the character. Twice the sophistication.</p>
+      <p>The hallmarks of the Classic, now based on the renowned 650 Twin engine.</p>
+    </div>
   </div>
 
   <div class="amp-engine">
