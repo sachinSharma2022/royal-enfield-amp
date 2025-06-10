@@ -7,14 +7,8 @@
   <link rel="canonical" href="https://example.com/demo.html" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
 
-  <!-- AMP runtime -->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- AMP carousel component -->
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
-  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <style amp-boilerplate>
     body {
-      background-color: #000;
       -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
       -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
       -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -71,6 +65,10 @@
       }
     }
   </style>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <noscript>
     <style amp-boilerplate>
       body {
@@ -83,6 +81,10 @@
   </noscript>
 
   <style amp-custom>
+    body {
+      background-color: #000;
+    }
+
     h1 {
       color: #0066cc;
       text-align: center;
@@ -237,6 +239,83 @@
       padding: 1rem;
       z-index: 2;
     }
+
+    .amp-engine {
+      color: #fff;
+      padding: 15px;
+    }
+
+    .amp-engine p {
+      color: #a6a6a6;
+      padding: 0 25px;
+      text-align: left;
+    }
+
+    .amp-engine h2 {
+      color: #fff;
+    }
+
+    .amp-engine-img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      margin: auto;
+      position: relative;
+      border-radius: 50%;
+    }
+
+    .amp-engine-img img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      min-height: 300px;
+    }
+
+    footer{
+      background-color: #e5e3e3;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width:767px){
+      footer{
+        flex-wrap: wrap;
+      }
+      footer .footer-links{
+        width: 100%;
+      }
+    }
+
+    footer h3{
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    footer .footer-links{
+      margin-bottom: 25px;
+    }
+
+    footer ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer ul li{
+      list-style-type: none;
+    }
+    footer ul li a{
+      text-decoration: none;
+      color: #000;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 7px 0;
+      display: block;
+    }
+
+    footer ul li a:hover{
+      color: #da291c;
+    }
   </style>
 
 </head>
@@ -276,6 +355,17 @@
     <div class="overlay-text">#ClassicTwin</div>
   </div>
 
+  <div class="amp-engine">
+    <h2>In double volume</h2>
+
+    <div class="amp-engine-img">
+      <amp-img src="images/engine-bg.svg" width="300" height="300" layout="fill" alt="Royal Enfield"></amp-img>
+      <amp-img src="images/engine.png" width="300" height="300" layout="fill" alt="Royal Enfield"></amp-img>
+    </div>
+    <p>Royal Enfield's much-loved 648cc twin-cylinder engine makes its debut on the Classic 650 in a new incarnation
+      for a refined, leisurely ride but with better performance at your fingertips</p>
+  </div>
+
   <!-- AMP Carousel -->
   <amp-carousel width="600" height="300" layout="responsive" type="slides" autoplay delay="3000" loop>
     <amp-img src="https://cdn.pixabay.com/photo/2017/11/23/04/07/royal-enfield-2972005_1280.jpg" width="600"
@@ -285,6 +375,41 @@
     <amp-img src="https://cdn.pixabay.com/photo/2021/01/15/17/19/royal-enfield-5919885_1280.jpg" width="600"
       height="300" layout="responsive" alt="Slide 3"></amp-img>
   </amp-carousel>
+
+  <footer>
+    <div class="footer-links">
+      <h3>Motorcycles</h3>
+      <ul>
+        <li><a href="#">Classic 650</a></li>
+        <li><a href="#">Bear 650</a></li>
+        <li><a href="#">Guerrilla 450</a></li>
+        <li><a href="#">Shotgun 650</a></li>
+        <li><a href="#">New Himalayan 450</a></li>
+        <li><a href="#">Bullet 350</a></li>
+        <li><a href="#">Super Meteor 650</a></li>
+        <li><a href="#">HNTR 350</a></li>
+        <li><a href="#">Classic 350</a></li>
+        <li><a href="#">Meteor 350</a></li>
+        <li><a href="#">Interceptor 650</a></li>
+        <li><a href="#">Continental GT</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">Order a Test Ride</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h3>About the company</h3>
+      <ul>
+        <li><a href="#">On the market since 1901</a></li>
+        <li><a href="#">Information about Eicher Motors</a></li>
+        <li><a href="#">Royal Enfield TV</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
 
