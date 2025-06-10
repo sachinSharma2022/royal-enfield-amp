@@ -118,7 +118,7 @@
       padding: 10px 0;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       position: fixed;
       top: 0;
       left: 0;
@@ -135,9 +135,18 @@
 
     .logo amp-img {
       width: 100%;
-      max-width: 150px;
+      max-width: 250px;
       height: auto;
       display: block;
+    }
+
+    @media(max-width:767px) {
+      .logo amp-img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        display: block;
+      }
     }
 
     .logo img {
@@ -145,17 +154,92 @@
       min-height: auto;
       margin: 20px 0 0 20px;
       width: 100%;
-      max-width: 100px;
-      min-width: 100px;
+      max-width: 200px;
+      min-width: 200px;
+    }
+
+    @media(max-width:767px) {
+      .logo img {
+        height: auto;
+        min-height: auto;
+        margin: 20px 0 0 20px;
+        width: 100%;
+        max-width: 100px;
+        min-width: 100px;
+      }
     }
 
     nav {
       display: none;
     }
 
+    .right-nav {
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+    }
+
+    .right-nav .login-text {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 8px;
+      gap: 3px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .right-nav .login-text amp-img {
+      height: 15px;
+    }
+
+    .right-nav .login-text amp-img img {
+      width: 20px;
+      min-height: 15px;
+      height: 15px;
+    }
+
+    @media(max-width:767px) {
+      .right-nav .login-text {
+        display: none;
+      }
+    }
+
+    @media(max-width:767px) {
+      .right-nav {
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .user-btn {
+      display: none;
+    }
+
+    @media(max-width:767px) {
+      .user-btn {
+        display: inline-flex;
+      }
+    }
+
+    .right-nav button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+
+    .right-nav amp-img img {
+      width: 100%;
+      min-width: 20px;
+      height: 25px;
+      max-width: 29px;
+      min-height: 25px;
+    }
+
     .desktop-nav {
       display: flex;
-      gap: 15px;
+      gap: 30px;
     }
 
     .desktop-nav li {
@@ -165,7 +249,19 @@
     .desktop-nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .desktop-nav a amp-img {
+      min-height: 18px;
+    }
+
+    .desktop-nav a amp-img img {
+      min-width: 18px;
+      min-height: 13px;
     }
 
     .menu-btn {
@@ -174,7 +270,7 @@
       font-size: 24px;
       color: white;
       display: inline-block;
-      margin-right: 10px;
+      margin-left: 8px;
     }
 
     @media (min-width: 768px) {
@@ -184,37 +280,63 @@
 
       nav {
         display: block;
+        margin-right: 11rem;
       }
     }
 
     amp-sidebar {
       width: 100%;
-      background: #111;
-      padding: 20px;
+      background: #000;
       margin-top: 50px;
       max-width: 100%;
       left: 0;
+      padding-top: 2rem;
     }
 
     amp-sidebar a {
       display: block;
       color: #fff;
-      margin: 10px 0;
+      margin: 10px 25px;
       text-decoration: none;
       font-size: 18px;
       animation: none;
+      background-color: #212121;
+      padding: 14px 20px 10px;
+      font-size: 16px;
     }
+
     amp-sidebar[side=left] {
       transform: none;
       animation: none;
       transition: none;
     }
-    amp-sidebar[side][i-amphtml-sidebar-opened]{
+
+    amp-sidebar[side][i-amphtml-sidebar-opened] {
       transform: none;
       transition: none;
     }
 
-    .amp-sidebar-mask{
+    .fixed-nav {
+      position: fixed;
+      bottom: 4rem;
+      left: 0;
+      right: 0;
+    }
+
+    .fixed-nav a {
+      display: block;
+      border: 1px solid #fff;
+      color: #fff;
+      background-color: #000;
+      text-align: center;
+    }
+
+    .fixed-nav a:last-child {
+      background-color: #da291c;
+      border-color: #da291c;
+    }
+
+    .amp-sidebar-mask {
       background-color: transparent;
     }
 
@@ -293,18 +415,31 @@
 
     footer {
       background-color: #e5e3e3;
-      padding: 25px 30px;
-      display: flex;
-      justify-content: space-between;
+      padding: 25px 0;
     }
 
     @media (max-width: 767px) {
       footer {
         flex-wrap: wrap;
+        padding: 25px;
       }
 
       footer .footer-links {
         width: 100%;
+      }
+    }
+
+    footer .footer-cols {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    @media (max-width: 767px) {
+      footer .footer-cols {
+        flex-direction: column;
+        margin-bottom: 25px;
+        padding: 0;
       }
     }
 
@@ -439,16 +574,41 @@
       border-right: none;
     }
 
+    @media(max-width:767px) {
+      .social {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    }
+
     .social {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-bottom: 1px solid #333;
+      margin-bottom: 40px;
+      padding-bottom: 25px;
+    }
+
+    @media(max-width:767px) {
+      .social {
+        display: block;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    @media(max-width:767px) {
+      .social p {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
     }
 
     .social p {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 20px;
+      margin-right: 10px;
     }
 
     .social .social-icons {
@@ -457,7 +617,7 @@
       gap: 10px;
     }
 
-    .social .social-icons a{
+    .social .social-icons a {
       display: flex;
       align-items: center;
       width: 100%;
@@ -484,6 +644,11 @@
     <a href="#">Cloth</a>
     <a href="#">Our World</a>
     <a href="#">Support</a>
+
+    <div class="fixed-nav">
+      <a href="#">Registration</a>
+      <a href="#">Contacts</a>
+    </div>
   </amp-sidebar>
 
   <header>
@@ -491,17 +656,33 @@
       <amp-img src="images/logo.avif" width="100" height="100" layout="fill" alt="Logo"></amp-img>
     </a>
 
-    <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button>
-
     <nav>
       <ul class="desktop-nav">
         <li><a href="#">Motorcycles</a></li>
         <li><a href="#">Contacts</a></li>
         <li><a href="#">Cloth</a></li>
-        <li><a href="#">Our World</a></li>
+        <li><a href="#">
+            Our World
+            <amp-img src="images/arrow.png" width="20" height="18" layout="fixed" alt="Login"></amp-img>
+          </a>
+        </li>
         <li><a href="#">Support</a></li>
       </ul>
     </nav>
+
+    <div class="right-nav">
+      <a href="#" class="login-text">
+        Login
+        <amp-img src="images/arrow.png" width="20" height="18" layout="fixed" alt="Login"></amp-img>
+      </a>
+      <button class="user-btn">
+        <amp-img src="images/user.png" width="31" height="27" layout="fixed" alt="User"></amp-img>
+      </button>
+      <button>
+        <amp-img src="images/search.png" width="30" height="28" layout="fixed" alt="User"></amp-img>
+      </button>
+      <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button>
+    </div>
   </header>
 
   <div class="banner-wrapper">
@@ -590,37 +771,39 @@
         </a>
       </div>
     </div>
-    <div class="footer-links">
-      <h3>Motorcycles</h3>
-      <ul>
-        <li><a href="#">Classic 650</a></li>
-        <li><a href="#">Bear 650</a></li>
-        <li><a href="#">Guerrilla 450</a></li>
-        <li><a href="#">Shotgun 650</a></li>
-        <li><a href="#">New Himalayan 450</a></li>
-        <li><a href="#">Bullet 350</a></li>
-        <li><a href="#">Super Meteor 650</a></li>
-        <li><a href="#">HNTR 350</a></li>
-        <li><a href="#">Classic 350</a></li>
-        <li><a href="#">Meteor 350</a></li>
-        <li><a href="#">Interceptor 650</a></li>
-        <li><a href="#">Continental GT</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h3>Support</h3>
-      <ul>
-        <li><a href="#">Contacts</a></li>
-        <li><a href="#">Order a Test Ride</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h3>About the company</h3>
-      <ul>
-        <li><a href="#">On the market since 1901</a></li>
-        <li><a href="#">Information about Eicher Motors</a></li>
-        <li><a href="#">Royal Enfield TV</a></li>
-      </ul>
+    <div class="footer-cols">
+      <div class="footer-links">
+        <h3>Motorcycles</h3>
+        <ul>
+          <li><a href="#">Classic 650</a></li>
+          <li><a href="#">Bear 650</a></li>
+          <li><a href="#">Guerrilla 450</a></li>
+          <li><a href="#">Shotgun 650</a></li>
+          <li><a href="#">New Himalayan 450</a></li>
+          <li><a href="#">Bullet 350</a></li>
+          <li><a href="#">Super Meteor 650</a></li>
+          <li><a href="#">HNTR 350</a></li>
+          <li><a href="#">Classic 350</a></li>
+          <li><a href="#">Meteor 350</a></li>
+          <li><a href="#">Interceptor 650</a></li>
+          <li><a href="#">Continental GT</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Contacts</a></li>
+          <li><a href="#">Order a Test Ride</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>About the company</h3>
+        <ul>
+          <li><a href="#">On the market since 1901</a></li>
+          <li><a href="#">Information about Eicher Motors</a></li>
+          <li><a href="#">Royal Enfield TV</a></li>
+        </ul>
+      </div>
     </div>
 
     <p class="copyright">© 2025 Royal Enfield | Product appearance may vary from images shown</p>
