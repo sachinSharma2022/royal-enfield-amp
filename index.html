@@ -1,1028 +1,1379 @@
 <!DOCTYPE html>
 <html ⚡>
+  <head>
+    <meta charset="utf-8" />
+    <title>AMP Image & Slider Demo</title>
+    <link rel="canonical" href="https://example.com/demo.html" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-carousel"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-sidebar"
+      src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <title>AMP Image & Slider Demo</title>
-  <link rel="canonical" href="https://example.com/demo.html" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
-  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet" />
-
-  <style amp-boilerplate>
-    body {
-      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-    }
-
-    @-webkit-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-moz-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-ms-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @-o-keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-
-    @keyframes -amp-start {
-      from {
-        visibility: hidden;
-      }
-
-      to {
-        visibility: visible;
-      }
-    }
-  </style>
-  <noscript>
     <style amp-boilerplate>
       body {
-        -webkit-animation: none;
-        -moz-animation: none;
-        -ms-animation: none;
-        animation: none;
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
       }
     </style>
-  </noscript>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
 
-  <style amp-custom>
-    body {
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-      font-family: "Roboto", sans-serif;
-    }
+    <style amp-custom>
+      body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+      }
 
-    h1 {
-      color: #0066cc;
-      text-align: center;
-    }
+      h1,
+      h3,
+      h3 {
+        font-family: "Roboto Condensed", sans-serif;
+        letter-spacing: -1px;
+      }
 
-    p {
-      font-size: 16px;
-      color: #333;
-      text-align: center;
-    }
+      h1 {
+        color: #0066cc;
+        text-align: center;
+      }
 
-    .amp-slider amp-carousel {
-      margin-top: 20px;
-      height: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
-    }
+      p {
+        font-size: 14px;
+        color: #333;
+        text-align: center;
+        line-height: 1.5;
+      }
 
-    .amp-slider amp-img {
-      width: 100%;
-      height: auto;
-      min-height: auto;
-      display: block;
-    }
+      .amp-slider amp-carousel {
+        margin-top: 20px;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+      }
 
-    .amp-slider amp-img img {
-      height: auto;
-      min-height: auto;
-    }
+      .amp-slider amp-img {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        display: block;
+      }
 
-    .amp-slider .amp-carousel-slide {
-      height: auto;
-    }
+      .amp-slider amp-img img {
+        height: auto;
+        min-height: auto;
+      }
 
-    .amp-slider .slide-text {
-      background: linear-gradient(114deg, rgb(33, 33, 33), rgb(13, 13, 13));
-      background-image: linear-gradient(90deg, rgb(77, 77, 77), rgb(22, 22, 22)) 1 / 1 / 0 stretch;
-      border-style: solid;
-      border-width: 1px;
-      padding: 20px;
-      position: relative;
-      width: 70%;
-      margin: auto;
-    }
+      .amp-slider .amp-carousel-slide {
+        height: auto;
+      }
 
-    .amp-slider .slide-text p {
-      color: #a7a7a7;
-      text-align: left;
-    }
+      .amp-slider .slide-text {
+        background: linear-gradient(114deg, rgb(33, 33, 33), rgb(13, 13, 13));
+        background-image: linear-gradient(
+            90deg,
+            rgb(77, 77, 77),
+            rgb(22, 22, 22)
+          )
+          1 / 1 / 0 stretch;
+        border-style: solid;
+        border-width: 1px;
+        padding: 20px;
+        position: relative;
+        width: 70%;
+        margin: auto;
+      }
 
-    .amp-slider .slide-text h3 {
-      color: #fff;
-      text-align: left;
-    }
+      .amp-slider .slide-text p {
+        color: #a7a7a7;
+        text-align: left;
+      }
 
-    header {
-      background: #000;
-      color: #fff;
-      padding: 10px 0;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9;
-    }
+      .amp-slider .slide-text h3 {
+        color: #fff;
+        text-align: left;
+      }
 
-    .logo {
-      display: block;
-      width: 100%;
-      max-width: 100px;
-      height: auto;
-    }
+      header {
+        background: #000;
+        color: #fff;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+      }
 
-    .logo amp-img {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      display: block;
-    }
+      .logo {
+        display: block;
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+      }
 
-    @media(max-width:767px) {
       .logo amp-img {
         width: 100%;
-        max-width: 150px;
+        max-width: 250px;
         height: auto;
         display: block;
       }
-    }
 
-    .logo img {
-      height: auto;
-      min-height: auto;
-      margin: 20px 0 0 20px;
-      width: 100%;
-      max-width: 200px;
-      min-width: 200px;
-    }
+      @media (max-width: 767px) {
+        .logo amp-img {
+          width: 100%;
+          max-width: 150px;
+          height: auto;
+          display: block;
+        }
+      }
 
-    @media(max-width:767px) {
       .logo img {
         height: auto;
         min-height: auto;
         margin: 20px 0 0 20px;
         width: 100%;
-        max-width: 100px;
-        min-width: 100px;
+        max-width: 200px;
+        min-width: 200px;
       }
-    }
 
-    nav {
-      display: none;
-    }
-
-    .right-nav {
-      padding: 0 25px;
-      display: flex;
-      align-items: center;
-    }
-
-    .right-nav .login-text {
-      display: inline-flex;
-      align-items: center;
-      margin-right: 8px;
-      gap: 3px;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .right-nav .login-text amp-img {
-      height: 15px;
-    }
-
-    .right-nav .login-text amp-img img {
-      width: 20px;
-      min-height: 15px;
-      height: 15px;
-    }
-
-    @media(max-width:767px) {
-      .right-nav .login-text {
-        display: none;
-      }
-    }
-
-    @media(max-width:767px) {
-      .right-nav {
-        padding: 0 15px;
-        display: flex;
-        align-items: center;
-      }
-    }
-
-    .user-btn {
-      display: none;
-    }
-
-    @media(max-width:767px) {
-      .user-btn {
-        display: inline-flex;
-      }
-    }
-
-    .right-nav button {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      padding: 0;
-    }
-
-    .right-nav amp-img img {
-      width: 100%;
-      min-width: 15px;
-      height: 20px;
-      max-width: 25px;
-      min-height: 22px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      gap: 30px;
-    }
-
-    .desktop-nav li {
-      list-style: none;
-    }
-
-    .desktop-nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-    }
-
-    .desktop-nav a amp-img {
-      min-height: 18px;
-    }
-
-    .desktop-nav a amp-img img {
-      min-width: 18px;
-      min-height: 13px;
-    }
-
-    .menu-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: white;
-      display: inline-block;
-      margin-left: 8px;
-    }
-
-    @media (min-width: 768px) {
-      .menu-btn {
-        display: none;
+      @media (max-width: 767px) {
+        .logo img {
+          height: auto;
+          min-height: auto;
+          margin: 20px 0 0 20px;
+          width: 100%;
+          max-width: 100px;
+          min-width: 100px;
+        }
       }
 
       nav {
-        display: block;
-        margin-right: 11rem;
+        display: none;
       }
-    }
 
-    amp-sidebar {
-      width: 100%;
-      background: #000;
-      margin-top: 50px;
-      max-width: 100%;
-      left: 0;
-      padding-top: 2rem;
-    }
+      .right-nav {
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+      }
 
-    amp-sidebar a {
-      display: block;
-      color: #fff;
-      margin: 10px 25px;
-      text-decoration: none;
-      font-size: 18px;
-      animation: none;
-      background-color: #212121;
-      padding: 14px 20px 10px;
-      font-size: 16px;
-    }
+      .right-nav .login-text {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 8px;
+        gap: 3px;
+        color: #fff;
+        text-decoration: none;
+      }
 
-    amp-sidebar[side=left] {
-      transform: none;
-      animation: none;
-      transition: none;
-    }
+      .right-nav .login-text amp-img {
+        height: 15px;
+      }
 
-    .fixed-nav {
-      position: fixed;
-      bottom: 6rem;
-      left: 0;
-      right: 0;
-    }
+      .right-nav .login-text amp-img img {
+        width: 20px;
+        min-height: 15px;
+        height: 15px;
+      }
 
-    .fixed-nav a {
-      display: block;
-      border: 1px solid #fff;
-      color: #fff;
-      background-color: #000;
-      text-align: center;
-    }
+      @media (max-width: 767px) {
+        .right-nav .login-text {
+          display: none;
+        }
+      }
 
-    .fixed-nav a:last-child {
-      background-color: #da291c;
-      border-color: #da291c;
-    }
+      @media (max-width: 767px) {
+        .right-nav {
+          padding: 0 15px;
+          display: flex;
+          align-items: center;
+        }
+      }
 
-    .amp-sidebar-mask {
-      background-color: transparent;
-    }
+      .user-btn {
+        display: none;
+      }
 
-    .banner-wrapper {
-      height: 100vh;
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
+      @media (max-width: 767px) {
+        .user-btn {
+          display: inline-flex;
+        }
+      }
 
-    .banner-image amp-img {
-      object-fit: cover;
-    }
+      .right-nav button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+      }
 
-    .banner-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+      .right-nav amp-img img {
+        width: 100%;
+        min-width: 15px;
+        height: 20px;
+        max-width: 25px;
+        min-height: 22px;
+      }
 
-    .gradient-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(0deg, #000 15%, transparent);
-      z-index: 1;
-    }
+      .desktop-nav {
+        display: flex;
+        gap: 30px;
+      }
 
-    .overlay-text {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      color: #fff;
-      font-size: 2rem;
-      margin: 0 auto;
-      text-align: center;
-      padding: 1rem 3rem;
-      z-index: 2;
-    }
+      .desktop-nav li {
+        list-style: none;
+      }
 
-    .overlay-text h1 {
-      font-size: 40px;
-      line-height: 48px;
-      margin: 0;
-      padding-bottom: 30px;
-      width: 100%;
-      color: #fff;
-    }
+      .desktop-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+      }
 
-    .overlay-text h2 {
-      font-size: 16px;
-      font-weight: 600;
-    }
+      .desktop-nav a amp-img {
+        min-height: 18px;
+      }
 
-    .overlay-text p {
-      font-weight: 400;
-      font-size: 14px;
-      color: #fff;
-    }
+      .desktop-nav a amp-img img {
+        min-width: 18px;
+        min-height: 13px;
+      }
 
-    .amp-engine {
-      color: #fff;
-      padding: 15px;
-    }
+      .menu-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        display: inline-block;
+        margin-left: 8px;
+      }
 
-    .amp-engine p {
-      color: #a6a6a6;
-      padding: 0 25px;
-      text-align: left;
-    }
+      @media (min-width: 768px) {
+        .menu-btn {
+          display: none;
+        }
 
-    .amp-engine h2 {
-      color: #fff;
-    }
+        nav {
+          display: block;
+          margin-right: 11rem;
+        }
+      }
 
-    .amp-engine-img {
-      width: 100%;
-      max-width: 300px;
-      height: 300px;
-      margin: auto;
-      position: relative;
-      border-radius: 50%;
-    }
+      amp-sidebar {
+        width: 100%;
+        background: #000;
+        margin-top: 50px;
+        max-width: 100%;
+        left: 0;
+        padding-top: 2rem;
+      }
 
-    .amp-engine-img img {
-      width: 100%;
-      max-width: 300px;
-      height: 300px;
-      min-height: 300px;
-    }
+      amp-sidebar a {
+        display: block;
+        color: #fff;
+        margin: 10px 25px;
+        text-decoration: none;
+        font-size: 18px;
+        animation: none;
+        background-color: #212121;
+        padding: 14px 20px 10px;
+        font-size: 16px;
+      }
 
-    footer {
-      background-color: #e5e3e3;
-      padding: 25px 0;
-    }
+      amp-sidebar[side="left"] {
+        transform: none;
+        animation: none;
+        transition: none;
+      }
 
-    @media (max-width: 767px) {
+      .fixed-nav {
+        position: fixed;
+        bottom: 6rem;
+        left: 0;
+        right: 0;
+      }
+
+      .fixed-nav a {
+        display: block;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: #000;
+        text-align: center;
+      }
+
+      .fixed-nav a:last-child {
+        background-color: #da291c;
+        border-color: #da291c;
+      }
+
+      .amp-sidebar-mask {
+        background-color: transparent;
+      }
+
+      .banner-wrapper {
+        height: 100vh;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .banner-image amp-img {
+        object-fit: cover;
+      }
+
+      .banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #000 15%, transparent);
+        z-index: 1;
+      }
+
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        font-size: 2rem;
+        margin: 0 auto;
+        text-align: center;
+        padding: 1rem 3rem;
+        z-index: 2;
+      }
+
+      .overlay-text h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin: 0;
+        padding-bottom: 30px;
+        width: 100%;
+        color: #fff;
+      }
+
+      .overlay-text h2 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .overlay-text p {
+        font-weight: 400;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .amp-engine {
+        color: #fff;
+        padding: 15px;
+      }
+
+      .amp-engine p {
+        color: #a6a6a6;
+        padding: 0 25px;
+        text-align: left;
+      }
+
+      .amp-engine h2 {
+        color: #fff;
+      }
+
+      .amp-engine-img {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin: auto;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      .amp-engine-img img {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        min-height: 300px;
+      }
+
       footer {
-        flex-wrap: wrap;
-        padding: 25px;
+        background-color: #e5e3e3;
+        padding: 25px 0;
+      }
+
+      @media (max-width: 767px) {
+        footer {
+          flex-wrap: wrap;
+          padding: 25px;
+        }
+
+        footer .footer-links {
+          width: 100%;
+        }
+      }
+
+      footer .footer-cols {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+      }
+
+      @media (max-width: 767px) {
+        footer .footer-cols {
+          flex-direction: column;
+          margin-bottom: 25px;
+          padding: 0;
+        }
+      }
+
+      footer h3 {
+        font-size: 18px;
+        margin: 0 0 10px;
       }
 
       footer .footer-links {
-        width: 100%;
-      }
-    }
-
-    footer .footer-cols {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 25px;
-    }
-
-    @media (max-width: 767px) {
-      footer .footer-cols {
-        flex-direction: column;
         margin-bottom: 25px;
+      }
+
+      footer .footer-links:last-child {
+        margin-bottom: 0;
+      }
+
+      footer ul {
+        list-style: none;
         padding: 0;
+        margin: 0;
       }
-    }
 
-    footer h3 {
-      font-size: 18px;
-      margin: 0 0 10px;
-    }
+      footer ul li {
+        list-style-type: none;
+      }
 
-    footer .footer-links {
-      margin-bottom: 25px;
-    }
+      footer ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 13px;
+        font-weight: 400;
+        font-weight: 600;
+        padding: 7px 0;
+        display: block;
+      }
 
-    footer .footer-links:last-child {
-      margin-bottom: 0;
-    }
+      footer ul li a:hover {
+        color: #da291c;
+      }
 
-    footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+      .gallery-title {
+        font-size: 28px;
+        color: #fff;
+      }
 
-    footer ul li {
-      list-style-type: none;
-    }
+      .gallery-main {
+        padding: 12px 20px 50px;
+      }
 
-    footer ul li a {
-      text-decoration: none;
-      color: #000;
-      font-size: 13px;
-      font-weight: 400;
-      font-weight: 600;
-      padding: 7px 0;
-      display: block;
-    }
-
-    footer ul li a:hover {
-      color: #da291c;
-    }
-
-    .gallery-title {
-      font-size: 28px;
-      color: #fff;
-    }
-
-    .gallery-main {
-      padding: 12px 20px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    @media (max-width: 600px) {
       .gallery {
-        margin-bottom: 8px;
+        display: grid;
+        grid-template-columns: 1fr;
       }
-    }
 
-    .gallery img {
-      width: 100%;
-      margin: 8px 0;
-      padding: 8px;
-    }
-
-    .gallery.row {
-      display: flex;
-    }
-
-    @media (max-width: 767px) {
-      .gallery.row {
-        gap: 15px;
-        margin-bottom: 8px;
+      @media (max-width: 600px) {
+        .gallery {
+          margin-bottom: 8px;
+        }
       }
-    }
 
-    .gallery.row amp-img {
-      width: 100%;
-      flex: 1;
-    }
-
-    @media (min-width: 600px) {
       .gallery img {
-        height: auto;
-        margin: 8px;
+        width: 100%;
+        margin: 8px 0;
+        padding: 8px;
       }
 
-      .row-2,
-      .row-3 {
+      .gallery.row {
         display: flex;
       }
-    }
 
-    .secondary-footer {
-      background-color: #fff;
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-      padding: 25px;
-    }
+      @media (max-width: 767px) {
+        .gallery.row {
+          gap: 15px;
+          margin-bottom: 8px;
+        }
+      }
 
-    .secondary-footer a {
-      width: 100%;
-      align-items: center;
-      background: #f2f2f2;
-      color: #000;
-      padding: 17px 12px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .secondary-footer a span amp-img {
-      width: 100%;
-      max-width: 69px;
-      margin: auto;
-    }
-
-    .secondary-footer a:last-child span amp-img {
-      max-width: 46px;
-    }
-
-    .copyright {
-      text-align: left;
-      font-size: 10px;
-      font-weight: 600;
-      color: #000;
-    }
-
-    .foot-nav {
-      display: flex;
-    }
-
-    .foot-nav a {
-      font-size: 8px;
-      font-weight: 400;
-      text-decoration: none;
-      color: #000;
-      border-right: 1px solid #000;
-      padding-right: 5px;
-      margin-right: 5px;
-    }
-
-    .foot-nav a:last-child {
-      border-right: none;
-    }
-
-    @media(max-width:767px) {
-      .social {
-        text-align: center;
+      .gallery.row amp-img {
         width: 100%;
-        margin-bottom: 25px;
+        flex: 1;
       }
-    }
 
-    .social {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      border-bottom: 1px solid #333;
-      margin-bottom: 40px;
-      padding-bottom: 25px;
-    }
+      @media (min-width: 600px) {
+        .gallery img {
+          height: auto;
+          margin: 8px;
+        }
 
-    @media(max-width:767px) {
-      .social {
-        display: block;
-        border-bottom: none;
-        padding-bottom: 0;
+        .row-2,
+        .row-3 {
+          display: flex;
+        }
       }
-    }
 
-    @media(max-width:767px) {
-      .social p {
+      .secondary-footer {
+        background-color: #fff;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        padding: 25px;
+      }
+
+      .secondary-footer a {
+        width: 100%;
+        align-items: center;
+        background: #f2f2f2;
+        color: #000;
+        padding: 17px 12px;
+        text-decoration: none;
         font-weight: 600;
-        font-size: 14px;
-        margin-bottom: 20px;
       }
-    }
 
-    .social p {
-      margin-right: 10px;
-    }
+      .secondary-footer a span amp-img {
+        width: 100%;
+        max-width: 69px;
+        margin: auto;
+      }
 
-    .social .social-icons {
-      display: flex;
-      justify-self: center;
-      gap: 10px;
-    }
+      .secondary-footer a:last-child span amp-img {
+        max-width: 46px;
+      }
 
-    .social .social-icons a {
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
+      .copyright {
+        text-align: left;
+        font-size: 10px;
+        font-weight: 600;
+        color: #000;
+      }
 
-    .social .social-icons amp-img {
-      margin: 0 3px;
-      width: 100%;
-      min-width: 30px;
-      height: auto;
-    }
+      .foot-nav {
+        display: flex;
+      }
 
-    .social .social-icons amp-img img {
-      width: 100%;
-      height: auto;
-    }
+      .foot-nav a {
+        font-size: 8px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #000;
+        border-right: 1px solid #000;
+        padding-right: 5px;
+        margin-right: 5px;
+      }
 
-    .color-carousel-title {
-      font-size: 28px;
-      color: #fff;
-      padding: 50px 20px 0;
-      margin-bottom: 0;
-    }
+      .foot-nav a:last-child {
+        border-right: none;
+      }
 
-    .color-carousel-main {
-      padding: 20px 20px 50px;
+      @media (max-width: 767px) {
+        .social {
+          text-align: center;
+          width: 100%;
+          margin-bottom: 25px;
+        }
+      }
 
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom: 1px solid #333;
+        margin-bottom: 40px;
+        padding-bottom: 25px;
+      }
 
-    }
+      @media (max-width: 767px) {
+        .social {
+          display: block;
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
 
-    .carousel-main {
-      max-width: 400px;
-      margin: 0 auto;
-    }
+      @media (max-width: 767px) {
+        .social p {
+          font-weight: 600;
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+      }
 
-    .slide-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-      justify-content: center;
-    }
+      .social p {
+        margin-right: 10px;
+      }
 
-    .model-name {
-      margin-top: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #ffffff;
-    }
+      .social .social-icons {
+        display: flex;
+        justify-self: center;
+        gap: 10px;
+      }
 
-    .price-color {
-      font-size: 20px;
-      font-weight: bold;
+      .social .social-icons a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
 
-      color: #ffffff;
+      .social .social-icons amp-img {
+        margin: 0 3px;
+        width: 100%;
+        min-width: 30px;
+        height: auto;
+      }
 
-      border-top: 1px solid #373737;
-      display: inline-block;
-      padding-top: 15px;
-    }
+      .social .social-icons amp-img img {
+        width: 100%;
+        height: auto;
+      }
 
-    .thumbs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
+      .color-carousel-title {
+        font-size: 28px;
+        color: #fff;
+        padding: 50px 20px 0;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
 
-    .thumbs button {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
+      .color-carousel-main {
+        padding: 20px 20px 50px;
+      }
+      .color-carousel-main amp-img img {
+        width: 100%;
+        max-width: 100%;
+        max-height: auto;
+        object-fit: contain;
+      }
 
-    .thumbs amp-img {
-      border-radius: 6px;
-      border: 2px solid transparent;
-      transition: border 0.3s;
-    }
+      .carousel-main {
+        max-width: 400px;
+        margin: 0 auto;
+      }
 
-    .thumbs amp-img:hover {
-      border: 2px solid #00ffff;
-    }
-  </style>
-</head>
+      .slide-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+      }
 
-<body>
-  <amp-sidebar id="sidebar" layout="nodisplay" side="left">
-    <a href="#">Motorcycles</a>
-    <a href="#">Contacts</a>
-    <a href="#">Cloth</a>
-    <a href="#">Our World</a>
-    <a href="#">Support</a>
+      .model-name {
+        margin-top: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+      }
 
-    <div class="fixed-nav">
-      <a href="#">Registration</a>
+      .price-color {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        display: inline-block;
+        padding-top: 20px;
+      }
+
+      .thumbs-carousel {
+        margin: 1rem auto;
+        max-width: 300px;
+        background: transparent;
+        border-radius: 8px;
+      }
+
+      .thumb-button {
+        border: none;
+        background: transparent;
+        padding: 4px;
+        cursor: pointer;
+      }
+
+      .thumb-button:focus {
+        outline: 2px solid #007bff;
+      }
+
+      .thumb-button amp-img {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        transition: border 0.2s ease-in-out;
+      }
+
+      .thumb-button:hover amp-img {
+        border-color: #007bff;
+      }
+
+      .thumbs-carousel .i-amphtml-carousel-button {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+
+      .thumbs-carousel .i-amphtml-carousel-button:after {
+        color: white;
+        font-size: 20px;
+      }
+      .thumb-button:focus,
+      .thumb-button:active {
+        outline: none;
+        box-shadow: none;
+      }
+
+      .thumbs-carousel .amp-carousel-button {
+        border-radius: 50%;
+      }
+
+      .colors-section {
+        background: #100e14;
+      }
+
+      .tech-title {
+        color: #da291c;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .tech-button {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+        background: none;
+        border: none;
+      }
+
+      .tech-button svg {
+        scale: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+      <a href="#">Motorcycles</a>
       <a href="#">Contacts</a>
-    </div>
-  </amp-sidebar>
+      <a href="#">Cloth</a>
+      <a href="#">Our World</a>
+      <a href="#">Support</a>
 
-  <header>
-    <a href="#" class="logo">
-      <amp-img src="images/logo.avif" width="100" height="100" layout="fill" alt="Logo"></amp-img>
-    </a>
+      <div class="fixed-nav">
+        <a href="#">Registration</a>
+        <a href="#">Contacts</a>
+      </div>
+    </amp-sidebar>
 
-    <nav>
-      <ul class="desktop-nav">
-        <li><a href="#">Motorcycles</a></li>
-        <li><a href="#">Contacts</a></li>
-        <li><a href="#">Cloth</a></li>
-        <li><a href="#">
-            Our World
-            <amp-img src="images/arrow.png" width="20" height="18" layout="fixed" alt="Login"></amp-img>
-          </a>
-        </li>
-        <li><a href="#">Support</a></li>
-      </ul>
-    </nav>
-
-    <div class="right-nav">
-      <a href="#" class="login-text">
-        Login
-        <amp-img src="images/arrow.png" width="20" height="18" layout="fixed" alt="Login"></amp-img>
+    <header>
+      <a href="#" class="logo">
+        <amp-img
+          src="images/logo.avif"
+          width="100"
+          height="100"
+          layout="fill"
+          alt="Logo"
+        ></amp-img>
       </a>
-      <button class="user-btn">
-        <amp-img src="images/user.png" width="31" height="27" layout="fixed" alt="User"></amp-img>
-      </button>
-      <button>
-        <amp-img src="images/search.png" width="30" height="28" layout="fixed" alt="User"></amp-img>
-      </button>
-      <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button>
-    </div>
-  </header>
 
-  <div class="banner-wrapper">
-    <amp-img src="images/banner.avif" width="1920" height="695" layout="fill" class="banner-image"></amp-img>
-
-    <div class="gradient-overlay"></div>
-    <div class="overlay-text">
-      <h1>#ClassicTwin</h1>
-      <h2>Royal Enfield Classic 650</h2>
-      <p>Twice the character. Twice the sophistication.</p>
-      <p>The hallmarks of the Classic, now based on the renowned 650 Twin engine.</p>
-    </div>
-  </div>
-
-  <div class="amp-engine">
-    <h2>In double volume</h2>
-
-    <div class="amp-engine-img">
-      <amp-img src="images/engine-bg.svg" width="300" height="300" layout="fill" alt="Royal Enfield"></amp-img>
-      <amp-img src="images/engine.png" width="300" height="300" layout="fill" alt="Royal Enfield"></amp-img>
-    </div>
-    <p>
-      Royal Enfield's much-loved 648cc twin-cylinder engine makes its debut on
-      the Classic 650 in a new incarnation for a refined, leisurely ride but
-      with better performance at your fingertips
-    </p>
-  </div>
-
-  <h3 class="color-carousel-title">Colors</h3>
-  <div class="color-carousel-main">
-    <amp-carousel id="bikeCarousel" width="400" height="360" layout="fixed" type="slides">
-      <!-- Slide 0 -->
-      <div class="slide-content">
-        <amp-img src="/images/black-chrome.png" width="400" height="300" layout="fixed"
-          alt="Black Chrome"></amp-img>
-        <div class="price-color">RUB 699,000*</div>
-      </div>
-
-      <!-- Slide 1 -->
-      <div class="slide-content">
-        <amp-img src="/images/teal-bullet.png" width="400" height="300" layout="fixed" alt="Teal"></amp-img>
-        <div class="model-name">Teal</div>
-
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="slide-content">
-        <amp-img src="/images/vallum-red-bullet.png" width="400" height="300" layout="fixed"
-          alt="Vallum Red"></amp-img>
-        <div class="model-name">Vallum Red</div>
-      </div>
-    </amp-carousel>
-
-    <div class="thumbs">
-      <button on="tap:bikeCarousel.goToSlide(index=0)">
-        <amp-img src="/images/black-crome-tank.png" width="60" height="45" layout="fixed" alt="Black Tank"></amp-img>
-      </button>
-
-      <button on="tap:bikeCarousel.goToSlide(index=1)">
-        <amp-img src="/images/teal-tang.png" width="60" height="45" layout="fixed" alt="Teal Tank"></amp-img>
-      </button>
-
-      <button on="tap:bikeCarousel.goToSlide(index=2)">
-        <amp-img src="/images/vallum-red-tank.png" width="60" height="45" layout="fixed" alt="Red Tank"></amp-img>
-      </button>
-    </div>
-  </div>
-
-  <!-- AMP Carousel -->
-  <div class="amp-slider">
-    <amp-carousel width="600" height="1100" layout="responsive" type="slides" autoplay delay="3000" loop>
-      <div>
-        <amp-img src="images/slide-1.png" width="430" height="423" layout="responsive" alt="Slide 1"></amp-img>
-        <div class="slide-text">
-          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
-            which offers the option of a removable passenger seat and subframe.</p>
-        </div>
-      </div>
-      <div>
-        <amp-img src="images/slide-2.png" width="421" height="412" layout="responsive" alt="Slide 2"></amp-img>
-        <div class="slide-text">
-          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
-            which offers the option of a removable passenger seat and subframe.</p>
-        </div>
-      </div>
-      <div>
-        <amp-img src="images/slide-3.png" width="421" height="415" layout="responsive" alt="Slide 3"></amp-img>
-        <div class="slide-text">
-          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
-            which offers the option of a removable passenger seat and subframe.</p>
-        </div>
-      </div>
-      <div>
-        <amp-img src="images/slide-4.png" width="422" height="407" layout="responsive" alt="Slide 4"></amp-img>
-        <div class="slide-text">
-          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
-            which offers the option of a removable passenger seat and subframe.</p>
-        </div>
-      </div>
-      <div>
-        <amp-img src="images/slide-5.png" width="425" height="412" layout="responsive" alt="Slide 5"></amp-img>
-        <div class="slide-text">
-          <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-          <p>The Classic 650 is able to adapt to any ride, any plan or lack thereof, thanks to its flexible design,
-            which offers the option of a removable passenger seat and subframe.</p>
-        </div>
-      </div>
-    </amp-carousel>
-  </div>
-
-  <div class="gallery-main">
-    <h3 class="gallery-title">Gallery</h3>
-
-    <!-- First full-width image -->
-    <div class="gallery">
-      <amp-img src="images/gallery-1.webp" width="800" height="400" layout="responsive" alt="Main image"></amp-img>
-    </div>
-
-    <!-- Two images in row -->
-    <div class="gallery row row-2">
-      <amp-img src="images/gallery-2.jpg" width="400" height="192" layout="responsive" alt="Image 2"></amp-img>
-      <amp-img src="images/gallery-3.jpg" width="400" height="300" layout="responsive" alt="Image 3"></amp-img>
-    </div>
-
-    <div class="gallery row row-3">
-      <amp-img src="images/gallery-4.jpg" width="400" height="300" layout="responsive" alt="Image 4"></amp-img>
-      <amp-img src="images/gallery-5.jpg" width="400" height="300" layout="responsive" alt="Image 5"></amp-img>
-    </div>
-  </div>
-
-  <div class="secondary-footer">
-    <a href="#">
-      <span>
-        <amp-img src="images/bike.png" width="69" height="40" layout="responsive" alt="bike"></amp-img>
-      </span>
-      <p>Order a Test Ride</p>
-    </a>
-    <a href="#">
-      <span>
-        <amp-img src="images/map.png" width="46" height="44" layout="responsive" alt="map"></amp-img>
-      </span>
-      <p>Find a salon</p>
-    </a>
-  </div>
-
-  <footer>
-    <div class="social">
-      <p>Join the Conversation</p>
-      <div class="social-icons">
-        <a href="#">
-          <amp-img src="images/fb.png" width="40" height="37" layout="responsive" alt="Facebook"></amp-img>
-        </a>
-        <a href="#">
-          <amp-img src="images/twitter.png" width="36" height="34" layout="responsive" alt="Twitter"></amp-img>
-        </a>
-        <a href="#">
-          <amp-img src="images/yt.png" width="37" height="30" layout="responsive" alt="Youtube"></amp-img>
-        </a>
-        <a href="#">
-          <amp-img src="images/insta.png" width="36" height="37" layout="responsive" alt="Instagram"></amp-img>
-        </a>
-        <a href="#">
-          <amp-img src="images/linkedin.png" width="35" height="37" layout="responsive" alt="Linkedin"></amp-img>
-        </a>
-      </div>
-    </div>
-    <div class="footer-cols">
-      <div class="footer-links">
-        <h3>Motorcycles</h3>
-        <ul>
-          <li><a href="#">Classic 650</a></li>
-          <li><a href="#">Bear 650</a></li>
-          <li><a href="#">Guerrilla 450</a></li>
-          <li><a href="#">Shotgun 650</a></li>
-          <li><a href="#">New Himalayan 450</a></li>
-          <li><a href="#">Bullet 350</a></li>
-          <li><a href="#">Super Meteor 650</a></li>
-          <li><a href="#">HNTR 350</a></li>
-          <li><a href="#">Classic 350</a></li>
-          <li><a href="#">Meteor 350</a></li>
-          <li><a href="#">Interceptor 650</a></li>
-          <li><a href="#">Continental GT</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h3>Support</h3>
-        <ul>
+      <nav>
+        <ul class="desktop-nav">
+          <li><a href="#">Motorcycles</a></li>
           <li><a href="#">Contacts</a></li>
-          <li><a href="#">Order a Test Ride</a></li>
+          <li><a href="#">Cloth</a></li>
+          <li>
+            <a href="#">
+              Our World
+              <amp-img
+                src="images/arrow.png"
+                width="20"
+                height="18"
+                layout="fixed"
+                alt="Login"
+              ></amp-img>
+            </a>
+          </li>
+          <li><a href="#">Support</a></li>
         </ul>
+      </nav>
+
+      <div class="right-nav">
+        <a href="#" class="login-text">
+          Login
+          <amp-img
+            src="images/arrow.png"
+            width="20"
+            height="18"
+            layout="fixed"
+            alt="Login"
+          ></amp-img>
+        </a>
+        <button class="user-btn">
+          <amp-img
+            src="images/user.png"
+            width="31"
+            height="27"
+            layout="fixed"
+            alt="User"
+          ></amp-img>
+        </button>
+        <button>
+          <amp-img
+            src="images/search.png"
+            width="30"
+            height="28"
+            layout="fixed"
+            alt="User"
+          ></amp-img>
+        </button>
+        <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button>
       </div>
-      <div class="footer-links">
-        <h3>About the company</h3>
-        <ul>
-          <li><a href="#">On the market since 1901</a></li>
-          <li><a href="#">Information about Eicher Motors</a></li>
-          <li><a href="#">Royal Enfield TV</a></li>
-        </ul>
+    </header>
+
+    <div class="banner-wrapper">
+      <amp-img
+        src="images/banner.avif"
+        width="1920"
+        height="695"
+        layout="fill"
+        class="banner-image"
+      ></amp-img>
+
+      <div class="gradient-overlay"></div>
+      <div class="overlay-text">
+        <h1>#Classic650Twin</h1>
+        <h2>Royal Enfield Classic 650</h2>
+        <p>Twice the character. Twice the sophistication.</p>
+        <p>
+          The hallmarks of the Classic, now based on the renowned 650 Twin
+          engine.
+        </p>
       </div>
     </div>
 
-    <p class="copyright">© 2025 Royal Enfield | Product appearance may vary from images shown</p>
-    <div class="foot-nav">
-      <a href="#">Confidentiality</a>
-      <a href="#">Terms and Conditions</a>
-      <a href="#">Cookies</a>
-    </div>
-  </footer>
-</body>
+    <div class="amp-engine">
+      <h2>In double volume</h2>
 
+      <div class="amp-engine-img">
+        <amp-img
+          src="images/engine-bg.svg"
+          width="300"
+          height="300"
+          layout="fill"
+          alt="Royal Enfield"
+        ></amp-img>
+        <amp-img
+          src="images/engine.png"
+          width="300"
+          height="300"
+          layout="fill"
+          alt="Royal Enfield"
+        ></amp-img>
+      </div>
+      <p>
+        Royal Enfield's much-loved 648cc twin-cylinder engine makes its debut on
+        the Classic 650 in a new incarnation for a refined, leisurely ride but
+        with better performance at your fingertips
+      </p>
+    </div>
+
+    <div class="colors-section">
+      <h3 class="color-carousel-title">Colors</h3>
+      <div class="color-carousel-main">
+        <amp-carousel
+          id="bikeCarousel"
+          width="400"
+          height="360"
+          layout="responsive"
+          type="slides"
+        >
+          <!-- Slide 0 -->
+          <div class="slide-content">
+            <amp-img
+              src="/images/black-chrome.png"
+              width="400"
+              height="300"
+              layout="intrinsic"
+              layout="fixed"
+              alt="Black Chrome"
+            ></amp-img>
+            <div class="model-name">Black Chrome</div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="slide-content">
+            <amp-img
+              src="/images/teal-bullet.png"
+              width="400"
+              height="300"
+              layout="intrinsic"
+              layout="fixed"
+              alt="Teal"
+            ></amp-img>
+            <div class="model-name">Teal</div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-content">
+            <amp-img
+              src="/images/vallum-red-bullet.png"
+              width="400"
+              height="300"
+              layout="intrinsic"
+              layout="fixed"
+              alt="Vallum Red"
+            ></amp-img>
+            <div class="model-name">Vallum Red</div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide-content">
+            <amp-img
+              src="/images/brunting-thorpe-blue.png"
+              width="400"
+              height="300"
+              layout="intrinsic"
+              layout="fixed"
+              alt="Vallum Red"
+            ></amp-img>
+            <div class="model-name">Vallum Red</div>
+          </div>
+        </amp-carousel>
+
+        <amp-carousel
+          class="thumbs-carousel"
+          height="60"
+          layout="fixed-height"
+          type="carousel"
+          controls
+          loop
+        >
+          <button on="tap:bikeCarousel.goToSlide(index=0)" class="thumb-button">
+            <amp-img
+              src="/images/black-crome-tank.png"
+              width="92"
+              height="60"
+              layout="fixed"
+              alt="Black Tank"
+            ></amp-img>
+          </button>
+
+          <button on="tap:bikeCarousel.goToSlide(index=1)" class="thumb-button">
+            <amp-img
+              src="/images/teal-tang.png"
+              width="92"
+              height="60"
+              layout="fixed"
+              alt="Teal Tank"
+            ></amp-img>
+          </button>
+
+          <button on="tap:bikeCarousel.goToSlide(index=2)" class="thumb-button">
+            <amp-img
+              src="/images/vallum-red-tank.png"
+              width="92"
+              height="60"
+              layout="fixed"
+              alt="Red Tank"
+            ></amp-img>
+          </button>
+
+          <button on="tap:bikeCarousel.goToSlide(index=3)" class="thumb-button">
+            <amp-img
+              src="/images/bruntingthorpe-blue-tank.png"
+              width="92"
+              height="60"
+              layout="fixed"
+              alt="Blue Tank"
+            ></amp-img>
+          </button>
+        </amp-carousel>
+      </div>
+    </div>
+
+    <!-- AMP Carousel -->
+    <div class="amp-slider">
+      <amp-carousel
+        width="600"
+        height="1100"
+        layout="responsive"
+        type="slides"
+        autoplay
+        delay="3000"
+        loop
+      >
+        <div>
+          <amp-img
+            src="images/slide-1.png"
+            width="430"
+            height="423"
+            layout="responsive"
+            alt="Slide 1"
+          ></amp-img>
+          <div class="slide-text">
+            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+            <p>
+              The Classic 650 is able to adapt to any ride, any plan or lack
+              thereof, thanks to its flexible design, which offers the option of
+              a removable passenger seat and subframe.
+            </p>
+          </div>
+        </div>
+        <div>
+          <amp-img
+            src="images/slide-2.png"
+            width="421"
+            height="412"
+            layout="responsive"
+            alt="Slide 2"
+          ></amp-img>
+          <div class="slide-text">
+            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+            <p>
+              The Classic 650 is able to adapt to any ride, any plan or lack
+              thereof, thanks to its flexible design, which offers the option of
+              a removable passenger seat and subframe.
+            </p>
+          </div>
+        </div>
+        <div>
+          <amp-img
+            src="images/slide-3.png"
+            width="421"
+            height="415"
+            layout="responsive"
+            alt="Slide 3"
+          ></amp-img>
+          <div class="slide-text">
+            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+            <p>
+              The Classic 650 is able to adapt to any ride, any plan or lack
+              thereof, thanks to its flexible design, which offers the option of
+              a removable passenger seat and subframe.
+            </p>
+          </div>
+        </div>
+        <div>
+          <amp-img
+            src="images/slide-4.png"
+            width="422"
+            height="407"
+            layout="responsive"
+            alt="Slide 4"
+          ></amp-img>
+          <div class="slide-text">
+            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+            <p>
+              The Classic 650 is able to adapt to any ride, any plan or lack
+              thereof, thanks to its flexible design, which offers the option of
+              a removable passenger seat and subframe.
+            </p>
+          </div>
+        </div>
+        <div>
+          <amp-img
+            src="images/slide-5.png"
+            width="425"
+            height="412"
+            layout="responsive"
+            alt="Slide 5"
+          ></amp-img>
+          <div class="slide-text">
+            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+            <p>
+              The Classic 650 is able to adapt to any ride, any plan or lack
+              thereof, thanks to its flexible design, which offers the option of
+              a removable passenger seat and subframe.
+            </p>
+          </div>
+        </div>
+      </amp-carousel>
+
+      <button class="tech-button">
+        <h4 class="tech-title">Technical specifications</h4>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 5L15 12L8 19"
+            stroke="#DA291C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="gallery-main">
+      <h3 class="gallery-title">Gallery</h3>
+
+      <!-- First full-width image -->
+      <div class="gallery">
+        <amp-img
+          src="images/gallery-1.webp"
+          width="800"
+          height="400"
+          layout="responsive"
+          alt="Main image"
+        ></amp-img>
+      </div>
+
+      <!-- Two images in row -->
+      <div class="gallery row row-2">
+        <amp-img
+          src="images/gallery-2.jpg"
+          width="400"
+          height="192"
+          layout="responsive"
+          alt="Image 2"
+        ></amp-img>
+        <amp-img
+          src="images/gallery-3.jpg"
+          width="400"
+          height="300"
+          layout="responsive"
+          alt="Image 3"
+        ></amp-img>
+      </div>
+
+      <div class="gallery row row-3">
+        <amp-img
+          src="images/gallery-4.jpg"
+          width="400"
+          height="300"
+          layout="responsive"
+          alt="Image 4"
+        ></amp-img>
+        <amp-img
+          src="images/gallery-5.jpg"
+          width="400"
+          height="300"
+          layout="responsive"
+          alt="Image 5"
+        ></amp-img>
+      </div>
+    </div>
+
+    <div class="secondary-footer">
+      <a href="#">
+        <span>
+          <amp-img
+            src="images/bike.png"
+            width="69"
+            height="40"
+            layout="responsive"
+            alt="bike"
+          ></amp-img>
+        </span>
+        <p>Order a Test Ride</p>
+      </a>
+      <a href="#">
+        <span>
+          <amp-img
+            src="images/map.png"
+            width="46"
+            height="44"
+            layout="responsive"
+            alt="map"
+          ></amp-img>
+        </span>
+        <p>Find a salon</p>
+      </a>
+    </div>
+
+    <footer>
+      <div class="social">
+        <p>Join the Conversation</p>
+        <div class="social-icons">
+          <a href="#">
+            <amp-img
+              src="images/fb.png"
+              width="40"
+              height="37"
+              layout="responsive"
+              alt="Facebook"
+            ></amp-img>
+          </a>
+          <a href="#">
+            <amp-img
+              src="images/twitter.png"
+              width="36"
+              height="34"
+              layout="responsive"
+              alt="Twitter"
+            ></amp-img>
+          </a>
+          <a href="#">
+            <amp-img
+              src="images/yt.png"
+              width="37"
+              height="30"
+              layout="responsive"
+              alt="Youtube"
+            ></amp-img>
+          </a>
+          <a href="#">
+            <amp-img
+              src="images/insta.png"
+              width="36"
+              height="37"
+              layout="responsive"
+              alt="Instagram"
+            ></amp-img>
+          </a>
+          <a href="#">
+            <amp-img
+              src="images/linkedin.png"
+              width="35"
+              height="37"
+              layout="responsive"
+              alt="Linkedin"
+            ></amp-img>
+          </a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-links">
+          <h3>Motorcycles</h3>
+          <ul>
+            <li><a href="#">Classic 650</a></li>
+            <li><a href="#">Bear 650</a></li>
+            <li><a href="#">Guerrilla 450</a></li>
+            <li><a href="#">Shotgun 650</a></li>
+            <li><a href="#">New Himalayan 450</a></li>
+            <li><a href="#">Bullet 350</a></li>
+            <li><a href="#">Super Meteor 650</a></li>
+            <li><a href="#">HNTR 350</a></li>
+            <li><a href="#">Classic 350</a></li>
+            <li><a href="#">Meteor 350</a></li>
+            <li><a href="#">Interceptor 650</a></li>
+            <li><a href="#">Continental GT</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Order a Test Ride</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About the company</h3>
+          <ul>
+            <li><a href="#">On the market since 1901</a></li>
+            <li><a href="#">Information about Eicher Motors</a></li>
+            <li><a href="#">Royal Enfield TV</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="copyright">
+        © 2025 Royal Enfield | Product appearance may vary from images shown
+      </p>
+      <div class="foot-nav">
+        <a href="#">Confidentiality</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Cookies</a>
+      </div>
+    </footer>
+  </body>
 </html>
