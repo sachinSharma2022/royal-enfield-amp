@@ -773,7 +773,7 @@
 
       .thumbs-carousel {
         margin: 1rem auto;
-        max-width: 300px;
+        max-width: 280px;
         background: transparent;
         border-radius: 8px;
       }
@@ -781,8 +781,8 @@
       .thumb-button {
         border: none;
         background: transparent;
-        padding: 4px;
         cursor: pointer;
+        margin-inline-start: 0;
       }
 
       .thumb-button:focus {
@@ -790,9 +790,9 @@
       }
 
       .thumb-button amp-img {
-        border: 2px solid transparent;
-        border-radius: 4px;
-        transition: border 0.2s ease-in-out;
+        border: none;
+        width: 100% !important;
+        height: 100% !important;
       }
 
       .thumb-button:hover amp-img {
@@ -800,10 +800,11 @@
       }
 
       .thumbs-carousel .amp-carousel-button {
-        background-color: rgba(0, 0, 0, 0.4);
+        border: 1px solid #575757;
         border-radius: 50%;
         width: 32px;
         height: 32px;
+        margin: 0 -30px;
       }
 
       .thumbs-carousel .amp-carousel-button:after {
@@ -819,6 +820,7 @@
 
       .thumbs-carousel .amp-carousel-button {
         border-radius: 50%;
+        filter: grayscale(0) brightness(100);
       }
 
       .colors-section {
@@ -842,6 +844,16 @@
 
       .tech-button svg {
         scale: 0.8;
+      }
+
+      .no-controls .amp-carousel-button {
+        display: none !important;
+      }
+
+      .thumb-image {
+        width: 80px;
+        height: 50px;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -981,12 +993,13 @@
           height="360"
           layout="responsive"
           type="slides"
+          class="no-controls"
         >
           <!-- Slide 0 -->
           <div class="slide-content">
             <amp-img
               src="/images/black-chrome.png"
-              width="400"
+              width="300"
               height="300"
               layout="fixed"
               alt="Black Chrome"
@@ -998,7 +1011,7 @@
           <div class="slide-content">
             <amp-img
               src="/images/teal-bullet.png"
-              width="400"
+              width="300"
               height="300"
               layout="fixed"
               alt="Teal"
@@ -1010,7 +1023,7 @@
           <div class="slide-content">
             <amp-img
               src="/images/vallum-red-bullet.png"
-              width="400"
+              width="300"
               height="300"
               layout="fixed"
               alt="Vallum Red"
@@ -1022,7 +1035,7 @@
           <div class="slide-content">
             <amp-img
               src="/images/brunting-thorpe-blue.png"
-              width="400"
+              width="300"
               height="300"
               layout="fixed"
               alt="Vallum Red"
@@ -1034,49 +1047,58 @@
         <amp-carousel
           class="thumbs-carousel"
           height="60"
+          width="60"
           layout="fixed-height"
           type="carousel"
           controls
           loop
         >
           <button on="tap:bikeCarousel.goToSlide(index=0)" class="thumb-button">
-            <amp-img
-              src="/images/black-crome-tank.png"
-              width="92"
-              height="60"
-              layout="fixed"
-              alt="Black Tank"
-            ></amp-img>
+            <div class="thumb-image">
+              <amp-img
+                src="/images/black-crome-tank.png"
+                width="92"
+                height="60"
+                layout="fixed"
+                alt="Black Tank"
+              ></amp-img>
+            </div>
           </button>
 
           <button on="tap:bikeCarousel.goToSlide(index=1)" class="thumb-button">
-            <amp-img
-              src="/images/teal-tang.png"
-              width="92"
-              height="60"
-              layout="fixed"
-              alt="Teal Tank"
-            ></amp-img>
+            <div class="thumb-image">
+              <amp-img
+                src="/images/teal-tang.png"
+                width="92"
+                height="60"
+                layout="fixed"
+                alt="Teal Tank"
+              ></amp-img>
+            </div>
           </button>
 
           <button on="tap:bikeCarousel.goToSlide(index=2)" class="thumb-button">
-            <amp-img
-              src="/images/vallum-red-tank.png"
-              width="92"
-              height="60"
-              layout="fixed"
-              alt="Red Tank"
-            ></amp-img>
+            <div class="thumb-image">
+              <amp-img
+                src="/images/vallum-red-tank.png"
+                width="92"
+                height="60"
+                layout="fixed"
+                alt="Red Tank"
+              ></amp-img>
+            </div>
           </button>
 
           <button on="tap:bikeCarousel.goToSlide(index=3)" class="thumb-button">
-            <amp-img
-              src="/images/bruntingthorpe-blue-tank.png"
-              width="92"
-              height="60"
-              layout="fixed"
-              alt="Blue Tank"
-            ></amp-img>
+            <div class="thumb-image">
+              <amp-img
+                src="/images/bruntingthorpe-blue-tank.png"
+                width="92"
+                height="60"
+                layout="fixed"
+                alt="Blue Tank"
+              ></amp-img>
+            </div>
           </button>
         </amp-carousel>
       </div>
