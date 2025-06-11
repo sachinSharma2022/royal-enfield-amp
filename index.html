@@ -778,9 +778,20 @@
         justify-content: center;
       }
 
+      .text-head {
+        text-align: center;
+      }
+
       .model-name {
         margin-top: 50px;
         font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .model-number {
+        margin-top: 10px;
+        font-size: 20px;
         font-weight: bold;
         color: #ffffff;
       }
@@ -804,6 +815,7 @@
       .thumbs-carousel [horizontal="true"] {
         width: 78%;
         margin: 0 auto;
+        margin-top: -100%;
       }
 
       .thumb-button {
@@ -1041,7 +1053,11 @@
               layout="fixed"
               alt="Black Chrome"
             ></amp-img>
-            <div class="model-name">Black Chrome</div>
+
+            <div class="text-head">
+              <div class="model-name">Black Chrome</div>
+              <div class="model-number">RUB 714,000*</div>
+            </div>
           </div>
 
           <!-- Slide 1 -->
@@ -1053,7 +1069,10 @@
               layout="fixed"
               alt="Teal"
             ></amp-img>
-            <div class="model-name">Teal</div>
+            <div class="text-head">
+              <div class="model-name">Teal</div>
+              <div class="model-number">RUB 704,000*</div>
+            </div>
           </div>
 
           <!-- Slide 2 -->
@@ -1065,7 +1084,10 @@
               layout="fixed"
               alt="Vallum Red"
             ></amp-img>
-            <div class="model-name">Vallum Red</div>
+            <div class="text-head">
+              <div class="model-name">Vallum Red</div>
+              <div class="model-number">RUB 704,000*</div>
+            </div>
           </div>
 
           <!-- Slide 3 -->
@@ -1077,13 +1099,17 @@
               layout="fixed"
               alt="Vallum Red"
             ></amp-img>
-            <div class="model-name">Vallum Red</div>
+            <div class="text-head">
+              <div class="model-name">Vallum Red</div>
+              <div class="model-number">RUB 694,000*</div>
+            </div>
           </div>
         </amp-carousel>
 
         <amp-carousel
           class="thumbs-carousel"
           height="60"
+          width="60"
           layout="responsive"
           type="carousel"
           controls
