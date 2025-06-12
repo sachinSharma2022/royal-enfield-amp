@@ -2,12 +2,14 @@
 <html ⚡>
   <head>
     <meta charset="utf-8" />
-    <title>AMP Image & Slider Demo</title>
+    <title>Royal Enfield Classic</title>
     <link rel="canonical" href="https://example.com/demo.html" />
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
+    <meta content="Royal Enfield Classic 650 motorcycle price. Explore Classic 650 specs, features, colours, images &amp; more. Book a free Test Ride now!" itemprop="description"/>
+    <link href="/images/favicon.png" rel="icon" sizes="16x16" type="image/png"/>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
@@ -19,6 +21,13 @@
       custom-element="amp-sidebar"
       src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
     ></script>
+
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -99,10 +108,15 @@
 
     <style amp-custom>
       body {
-        background-color: #000;
         margin: 0;
         padding: 0;
         font-family: "Montserrat", sans-serif;
+      }
+
+      .main-section {
+        max-width: 768px;
+        background-color: #000;
+        margin: 0 auto;
       }
 
       h1,
@@ -182,15 +196,18 @@
       header {
         background: #000;
         color: #fff;
-        padding: 10px 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         position: fixed;
         top: 0;
         left: 0;
+        right: 0;
         width: 100%;
         z-index: 9;
+        max-width: 768px;
+        margin: 0 auto;
+        height: 50px;
       }
 
       .logo {
@@ -207,7 +224,7 @@
         display: block;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .logo amp-img {
           width: 100%;
           max-width: 150px;
@@ -219,17 +236,15 @@
       .logo img {
         height: auto;
         min-height: auto;
-        margin: 20px 0 0 20px;
         width: 100%;
         max-width: 200px;
         min-width: 200px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .logo img {
           height: auto;
           min-height: auto;
-          margin: 20px 0 0 20px;
           width: 100%;
           max-width: 100px;
           min-width: 100px;
@@ -265,13 +280,13 @@
         height: 15px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .right-nav .login-text {
           display: none;
         }
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .right-nav {
           padding: 0 15px;
           display: flex;
@@ -283,7 +298,7 @@
         display: none;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .user-btn {
           display: inline-flex;
         }
@@ -355,17 +370,6 @@
 
       [tabindex="-1"] .hammer-open-icon {
         display: none;
-      }
-
-      @media (min-width: 768px) {
-        .menu-btn {
-          display: none;
-        }
-
-        nav {
-          display: block;
-          margin-right: 11rem;
-        }
       }
 
       amp-sidebar {
@@ -517,7 +521,7 @@
         padding: 25px 0;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         footer {
           flex-wrap: wrap;
           padding: 25px;
@@ -534,7 +538,7 @@
         padding: 0 25px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         footer .footer-cols {
           flex-direction: column;
           margin-bottom: 25px;
@@ -607,7 +611,7 @@
         display: flex;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .gallery.row {
           gap: 15px;
           margin-bottom: 8px;
@@ -684,7 +688,7 @@
         border-right: none;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .social {
           text-align: center;
           width: 100%;
@@ -695,13 +699,13 @@
       .social {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         border-bottom: 1px solid #333;
         margin-bottom: 40px;
         padding-bottom: 25px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .social {
           display: block;
           border-bottom: none;
@@ -709,7 +713,7 @@
         }
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .social p {
           font-weight: 600;
           font-size: 14px;
@@ -896,644 +900,912 @@
         height: 50px;
         overflow: hidden;
       }
+
+      .form-section {
+        background-color: rgb(24, 24, 24);
+        padding: 10px 0 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: rgb(40, 40, 40);
+        padding: 20px 20px 40px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      input {
+        background: transparent;
+        border: 1px solid rgb(71, 71, 71);
+        color: #fff;
+        height: 45px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        outline: none;
+        box-shadow: none;
+      }
+
+      input::placeholder {
+        color: #757575;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: white;
+        font-weight: normal;
+      }
+
+      .checkbox a {
+        color: rgb(218, 41, 28);
+      }
+
+      .checkbox input {
+        margin: 0;
+        position: relative;
+        top: 4px;
+        transform: scale(1.5);
+        accent-color: #ffc107;
+        height: auto;
+      }
+
+      .submit-btn {
+        background-color: #ffc107;
+        border: none;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 12px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .disclaimer {
+        font-size: 12px;
+        color: #ccc;
+        line-height: 1.5;
+      }
+
+      .disclaimer a {
+        color: #ffc107;
+      }
+
+      .form-head {
+        color: white;
+        font-size: 28px;
+        line-height: 1.5;
+      }
+
+      .form-img-section {
+        padding: 0 20px 50px;
+      }
+
+      .form-title {
+        color: white;
+        font-size: 28px;
+        line-height: 1.5;
+        margin: 10px 0;
+      }
+
+      .form-item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .form-item label {
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .group-input {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgb(71, 71, 71);
+        display: flex;
+        align-items: center;
+      }
+
+      .group-input input {
+        border: none;
+        width: 100%;
+        margin-bottom: 0;
+        padding-left: 0px;
+      }
+
+      .group-input span {
+        position: relative;
+        color: white;
+        top: 0px;
+        left: 0px;
+        width: 50px;
+        text-align: center;
+        bottom: 0;
+        background-color: rgb(40, 40, 40);
+        display: block;
+        border-right: 1px solid rgb(71, 71, 71);
+        margin-right: 10px;
+      }
+
+      .error {
+        color: rgb(218, 41, 28);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
+        position: absolute;
+        bottom: -10px;
+      }
     </style>
   </head>
 
   <body>
-    <amp-sidebar id="sidebar" layout="nodisplay" side="left">
-      <a href="https://www.royalenfield.com/ru/ru/motorcycles/">Motorcycles</a>
-      <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/"
-        >Contacts</a
-      >
-      <a href="https://www.royalenfield.com/ru/ru/apparel/">Cloth</a>
-      <a href="https://www.royalenfield.com/ru/ru/motorcycles/classic-650/"
-        >Our World</a
-      >
-      <a href="https://www.royalenfield.com/ru/ru/support/">Support</a>
+    <div class="main-section">
+      <amp-sidebar id="sidebar" layout="nodisplay" side="left">
+        <a href="https://www.royalenfield.com/ru/ru/motorcycles/"
+          >Motorcycles</a
+        >
+        <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/"
+          >Contacts</a
+        >
+        <a href="https://www.royalenfield.com/ru/ru/apparel/">Cloth</a>
+        <a href="https://www.royalenfield.com/ru/ru/motorcycles/classic-650/"
+          >Our World</a
+        >
+        <a href="https://www.royalenfield.com/ru/ru/support/">Support</a>
 
-      <div class="fixed-nav">
-        <a href="#">Registration</a>
-        <a href="#">Contacts</a>
-      </div>
-    </amp-sidebar>
+        <div class="fixed-nav">
+          <a href="#">Registration</a>
+          <a href="#">Contacts</a>
+        </div>
+      </amp-sidebar>
 
-    <header>
-      <a href="#" class="logo">
-        <amp-img
-          src="images/logo.avif"
-          width="100"
-          height="100"
-          layout="fill"
-          alt="Logo"
-        ></amp-img>
-      </a>
-
-      <nav>
-        <ul class="desktop-nav">
-          <li><a href="#">Motorcycles</a></li>
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Cloth</a></li>
-          <li>
-            <a href="#">
-              Our World
-              <amp-img
-                src="images/arrow.png"
-                width="20"
-                height="18"
-                layout="fixed"
-                alt="Login"
-              ></amp-img>
-            </a>
-          </li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </nav>
-
-      <div class="right-nav">
-        <a href="#" class="login-text">
-          Login
+      <header>
+        <a href="#" class="logo">
           <amp-img
-            src="images/arrow.png"
-            width="20"
-            height="18"
-            layout="fixed"
-            alt="Login"
+            src="images/logo.avif"
+            width="100"
+            height="100"
+            layout="fill"
+            alt="Logo"
           ></amp-img>
         </a>
-        <button class="user-btn">
-          <amp-img
-            src="images/user.png"
-            width="31"
-            height="27"
-            layout="fixed"
-            alt="User"
-          ></amp-img>
-        </button>
-        <button>
-          <amp-img
-            src="images/search.png"
-            width="30"
-            height="28"
-            layout="fixed"
-            alt="User"
-          ></amp-img>
-        </button>
-        <!-- <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button> -->
-        <button class="menu-btn" on="tap:sidebar.toggle">
-          <div class="hammer-open-icon">&#x2630;</div>
-          <div class="hammer-close-icon">&#10005;</div>
-        </button>
+
+        <nav>
+          <ul class="desktop-nav">
+            <li><a href="#">Motorcycles</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Cloth</a></li>
+            <li>
+              <a href="#">
+                Our World
+                <amp-img
+                  src="images/arrow.png"
+                  width="20"
+                  height="18"
+                  layout="fixed"
+                  alt="Login"
+                ></amp-img>
+              </a>
+            </li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </nav>
+
+        <div class="right-nav">
+          <a href="#" class="login-text">
+            Login
+            <amp-img
+              src="images/arrow.png"
+              width="20"
+              height="18"
+              layout="fixed"
+              alt="Login"
+            ></amp-img>
+          </a>
+          <button class="user-btn">
+            <amp-img
+              src="images/user.png"
+              width="31"
+              height="27"
+              layout="fixed"
+              alt="User"
+            ></amp-img>
+          </button>
+          <button>
+            <amp-img
+              src="images/search.png"
+              width="30"
+              height="28"
+              layout="fixed"
+              alt="User"
+            ></amp-img>
+          </button>
+          <!-- <button class="menu-btn" on="tap:sidebar.toggle">&#9776;</button> -->
+          <button class="menu-btn" on="tap:sidebar.toggle">
+            <div class="hammer-open-icon">&#x2630;</div>
+            <div class="hammer-close-icon">&#10005;</div>
+          </button>
+        </div>
+      </header>
+
+      <div class="banner-wrapper">
+        <amp-img
+          src="images/banner.avif"
+          width="1920"
+          height="695"
+          layout="fill"
+          class="banner-image"
+        ></amp-img>
+
+        <div class="gradient-overlay"></div>
+        <div class="overlay-text">
+          <h1>#Classic650Twin</h1>
+          <h2>Royal Enfield Classic 650</h2>
+          <p>Twice the character. Twice the sophistication.</p>
+          <p>
+            The hallmarks of the Classic, now based on the renowned 650 Twin
+            engine.
+          </p>
+        </div>
       </div>
-    </header>
 
-    <div class="banner-wrapper">
-      <amp-img
-        src="images/banner.avif"
-        width="1920"
-        height="695"
-        layout="fill"
-        class="banner-image"
-      ></amp-img>
+      <div class="amp-engine">
+        <h2>In double volume</h2>
 
-      <div class="gradient-overlay"></div>
-      <div class="overlay-text">
-        <h1>#Classic650Twin</h1>
-        <h2>Royal Enfield Classic 650</h2>
-        <p>Twice the character. Twice the sophistication.</p>
+        <div class="amp-engine-img">
+          <amp-img
+            src="images/engine-bg.svg"
+            width="300"
+            height="300"
+            layout="fill"
+            alt="Royal Enfield"
+          ></amp-img>
+          <amp-img
+            src="images/engine.png"
+            width="300"
+            height="300"
+            layout="fill"
+            alt="Royal Enfield"
+          ></amp-img>
+        </div>
         <p>
-          The hallmarks of the Classic, now based on the renowned 650 Twin
-          engine.
+          Royal Enfield's much-loved 648cc twin-cylinder engine makes its debut
+          on the Classic 650 in a new incarnation for a refined, leisurely ride
+          but with better performance at your fingertips
         </p>
       </div>
-    </div>
 
-    <div class="amp-engine">
-      <h2>In double volume</h2>
+      <div class="colors-section">
+        <h3 class="color-carousel-title">Colors</h3>
+        <div class="color-carousel-main">
+          <amp-carousel
+            id="bikeCarousel"
+            width="400"
+            height="360"
+            layout="responsive"
+            type="slides"
+            class="no-controls"
+          >
+            <!-- Slide 0 -->
+            <div class="slide-content">
+              <amp-img
+                src="/images/black-chrome.png"
+                width="300"
+                height="300"
+                layout="fixed"
+                alt="Black Chrome"
+              ></amp-img>
 
-      <div class="amp-engine-img">
-        <amp-img
-          src="images/engine-bg.svg"
-          width="300"
-          height="300"
-          layout="fill"
-          alt="Royal Enfield"
-        ></amp-img>
-        <amp-img
-          src="images/engine.png"
-          width="300"
-          height="300"
-          layout="fill"
-          alt="Royal Enfield"
-        ></amp-img>
+              <div class="text-head">
+                <div class="model-name">Black Chrome</div>
+                <div class="model-number">RUB 714,000*</div>
+              </div>
+            </div>
+
+            <!-- Slide 1 -->
+            <div class="slide-content">
+              <amp-img
+                src="/images/teal-bullet.png"
+                width="300"
+                height="300"
+                layout="fixed"
+                alt="Teal"
+              ></amp-img>
+              <div class="text-head">
+                <div class="model-name">Teal</div>
+                <div class="model-number">RUB 704,000*</div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-content">
+              <amp-img
+                src="/images/vallum-red-bullet.png"
+                width="300"
+                height="300"
+                layout="fixed"
+                alt="Vallum Red"
+              ></amp-img>
+              <div class="text-head">
+                <div class="model-name">Vallum Red</div>
+                <div class="model-number">RUB 704,000*</div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide-content">
+              <amp-img
+                src="/images/brunting-thorpe-blue.png"
+                width="300"
+                height="300"
+                layout="fixed"
+                alt="Vallum Red"
+              ></amp-img>
+              <div class="text-head">
+                <div class="model-name">Vallum Red</div>
+                <div class="model-number">RUB 694,000*</div>
+              </div>
+            </div>
+          </amp-carousel>
+
+          <amp-carousel
+            class="thumbs-carousel"
+            height="60"
+            width="60"
+            layout="responsive"
+            type="carousel"
+            controls
+            loop
+          >
+            <button
+              on="tap:bikeCarousel.goToSlide(index=0)"
+              class="thumb-button"
+            >
+              <div class="thumb-image">
+                <amp-img
+                  src="/images/black-crome-tank.png"
+                  width="92"
+                  height="60"
+                  layout="fixed"
+                  alt="Black Tank"
+                ></amp-img>
+              </div>
+            </button>
+
+            <button
+              on="tap:bikeCarousel.goToSlide(index=1)"
+              class="thumb-button"
+            >
+              <div class="thumb-image">
+                <amp-img
+                  src="/images/teal-tang.png"
+                  width="92"
+                  height="60"
+                  layout="fixed"
+                  alt="Teal Tank"
+                ></amp-img>
+              </div>
+            </button>
+
+            <button
+              on="tap:bikeCarousel.goToSlide(index=2)"
+              class="thumb-button"
+            >
+              <div class="thumb-image">
+                <amp-img
+                  src="/images/vallum-red-tank.png"
+                  width="92"
+                  height="60"
+                  layout="fixed"
+                  alt="Red Tank"
+                ></amp-img>
+              </div>
+            </button>
+
+            <button
+              on="tap:bikeCarousel.goToSlide(index=3)"
+              class="thumb-button"
+            >
+              <div class="thumb-image">
+                <amp-img
+                  src="/images/bruntingthorpe-blue-tank.png"
+                  width="92"
+                  height="60"
+                  layout="fixed"
+                  alt="Blue Tank"
+                ></amp-img>
+              </div>
+            </button>
+          </amp-carousel>
+        </div>
       </div>
-      <p>
-        Royal Enfield's much-loved 648cc twin-cylinder engine makes its debut on
-        the Classic 650 in a new incarnation for a refined, leisurely ride but
-        with better performance at your fingertips
-      </p>
-    </div>
 
-    <div class="colors-section">
-      <h3 class="color-carousel-title">Colors</h3>
-      <div class="color-carousel-main">
+      <!-- AMP Carousel -->
+      <div class="amp-slider">
         <amp-carousel
-          id="bikeCarousel"
-          width="400"
-          height="360"
+          width="600"
+          height="1100"
           layout="responsive"
           type="slides"
-          class="no-controls"
-        >
-          <!-- Slide 0 -->
-          <div class="slide-content">
-            <amp-img
-              src="/images/black-chrome.png"
-              width="300"
-              height="300"
-              layout="fixed"
-              alt="Black Chrome"
-            ></amp-img>
-
-            <div class="text-head">
-              <div class="model-name">Black Chrome</div>
-              <div class="model-number">RUB 714,000*</div>
-            </div>
-          </div>
-
-          <!-- Slide 1 -->
-          <div class="slide-content">
-            <amp-img
-              src="/images/teal-bullet.png"
-              width="300"
-              height="300"
-              layout="fixed"
-              alt="Teal"
-            ></amp-img>
-            <div class="text-head">
-              <div class="model-name">Teal</div>
-              <div class="model-number">RUB 704,000*</div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide-content">
-            <amp-img
-              src="/images/vallum-red-bullet.png"
-              width="300"
-              height="300"
-              layout="fixed"
-              alt="Vallum Red"
-            ></amp-img>
-            <div class="text-head">
-              <div class="model-name">Vallum Red</div>
-              <div class="model-number">RUB 704,000*</div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide-content">
-            <amp-img
-              src="/images/brunting-thorpe-blue.png"
-              width="300"
-              height="300"
-              layout="fixed"
-              alt="Vallum Red"
-            ></amp-img>
-            <div class="text-head">
-              <div class="model-name">Vallum Red</div>
-              <div class="model-number">RUB 694,000*</div>
-            </div>
-          </div>
-        </amp-carousel>
-
-        <amp-carousel
-          class="thumbs-carousel"
-          height="60"
-          width="60"
-          layout="responsive"
-          type="carousel"
-          controls
+          autoplay
+          delay="3000"
           loop
         >
-          <button on="tap:bikeCarousel.goToSlide(index=0)" class="thumb-button">
-            <div class="thumb-image">
-              <amp-img
-                src="/images/black-crome-tank.png"
-                width="92"
-                height="60"
-                layout="fixed"
-                alt="Black Tank"
-              ></amp-img>
+          <div>
+            <amp-img
+              src="images/slide-1.png"
+              width="430"
+              height="423"
+              layout="responsive"
+              alt="Slide 1"
+            ></amp-img>
+            <div class="slide-text">
+              <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+              <p>
+                The Classic 650 is able to adapt to any ride, any plan or lack
+                thereof, thanks to its flexible design, which offers the option
+                of a removable passenger seat and subframe.
+              </p>
             </div>
-          </button>
-
-          <button on="tap:bikeCarousel.goToSlide(index=1)" class="thumb-button">
-            <div class="thumb-image">
-              <amp-img
-                src="/images/teal-tang.png"
-                width="92"
-                height="60"
-                layout="fixed"
-                alt="Teal Tank"
-              ></amp-img>
+          </div>
+          <div>
+            <amp-img
+              src="images/slide-2.png"
+              width="421"
+              height="412"
+              layout="responsive"
+              alt="Slide 2"
+            ></amp-img>
+            <div class="slide-text">
+              <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+              <p>
+                The Classic 650 is able to adapt to any ride, any plan or lack
+                thereof, thanks to its flexible design, which offers the option
+                of a removable passenger seat and subframe.
+              </p>
             </div>
-          </button>
-
-          <button on="tap:bikeCarousel.goToSlide(index=2)" class="thumb-button">
-            <div class="thumb-image">
-              <amp-img
-                src="/images/vallum-red-tank.png"
-                width="92"
-                height="60"
-                layout="fixed"
-                alt="Red Tank"
-              ></amp-img>
+          </div>
+          <div>
+            <amp-img
+              src="images/slide-3.png"
+              width="421"
+              height="415"
+              layout="responsive"
+              alt="Slide 3"
+            ></amp-img>
+            <div class="slide-text">
+              <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+              <p>
+                The Classic 650 is able to adapt to any ride, any plan or lack
+                thereof, thanks to its flexible design, which offers the option
+                of a removable passenger seat and subframe.
+              </p>
             </div>
-          </button>
-
-          <button on="tap:bikeCarousel.goToSlide(index=3)" class="thumb-button">
-            <div class="thumb-image">
-              <amp-img
-                src="/images/bruntingthorpe-blue-tank.png"
-                width="92"
-                height="60"
-                layout="fixed"
-                alt="Blue Tank"
-              ></amp-img>
+          </div>
+          <div>
+            <amp-img
+              src="images/slide-4.png"
+              width="422"
+              height="407"
+              layout="responsive"
+              alt="Slide 4"
+            ></amp-img>
+            <div class="slide-text">
+              <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+              <p>
+                The Classic 650 is able to adapt to any ride, any plan or lack
+                thereof, thanks to its flexible design, which offers the option
+                of a removable passenger seat and subframe.
+              </p>
             </div>
-          </button>
+          </div>
+          <div>
+            <amp-img
+              src="images/slide-5.png"
+              width="425"
+              height="412"
+              layout="responsive"
+              alt="Slide 5"
+            ></amp-img>
+            <div class="slide-text">
+              <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
+              <p>
+                The Classic 650 is able to adapt to any ride, any plan or lack
+                thereof, thanks to its flexible design, which offers the option
+                of a removable passenger seat and subframe.
+              </p>
+            </div>
+          </div>
         </amp-carousel>
+
+        <button class="tech-button">
+          <h4 class="tech-title">Technical specifications</h4>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 5L15 12L8 19"
+              stroke="#DA291C"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
       </div>
-    </div>
 
-    <!-- AMP Carousel -->
-    <div class="amp-slider">
-      <amp-carousel
-        width="600"
-        height="1100"
-        layout="responsive"
-        type="slides"
-        autoplay
-        delay="3000"
-        loop
-      >
-        <div>
+      <div class="gallery-main">
+        <h3 class="gallery-title">Gallery</h3>
+
+        <!-- First full-width image -->
+        <div class="gallery">
           <amp-img
-            src="images/slide-1.png"
-            width="430"
-            height="423"
+            src="images/gallery-1.webp"
+            width="800"
+            height="300"
             layout="responsive"
-            alt="Slide 1"
+            alt="Main image"
+            class="grid-image"
           ></amp-img>
-          <div class="slide-text">
-            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-            <p>
-              The Classic 650 is able to adapt to any ride, any plan or lack
-              thereof, thanks to its flexible design, which offers the option of
-              a removable passenger seat and subframe.
-            </p>
-          </div>
-        </div>
-        <div>
+
           <amp-img
-            src="images/slide-2.png"
-            width="421"
-            height="412"
+            src="images/gallery-2.jpg"
+            width="400"
+            height="192"
             layout="responsive"
-            alt="Slide 2"
+            alt="Image 2"
+            class="grid-image"
           ></amp-img>
-          <div class="slide-text">
-            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-            <p>
-              The Classic 650 is able to adapt to any ride, any plan or lack
-              thereof, thanks to its flexible design, which offers the option of
-              a removable passenger seat and subframe.
-            </p>
-          </div>
-        </div>
-        <div>
           <amp-img
-            src="images/slide-3.png"
-            width="421"
-            height="415"
+            src="images/gallery-3.jpg"
+            width="400"
+            height="300"
             layout="responsive"
-            alt="Slide 3"
+            alt="Image 3"
+            class="grid-image"
           ></amp-img>
-          <div class="slide-text">
-            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-            <p>
-              The Classic 650 is able to adapt to any ride, any plan or lack
-              thereof, thanks to its flexible design, which offers the option of
-              a removable passenger seat and subframe.
-            </p>
-          </div>
-        </div>
-        <div>
+
           <amp-img
-            src="images/slide-4.png"
-            width="422"
-            height="407"
+            src="images/gallery-4.jpg"
+            width="400"
+            height="300"
             layout="responsive"
-            alt="Slide 4"
+            alt="Image 4"
+            class="grid-image"
           ></amp-img>
-          <div class="slide-text">
-            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-            <p>
-              The Classic 650 is able to adapt to any ride, any plan or lack
-              thereof, thanks to its flexible design, which offers the option of
-              a removable passenger seat and subframe.
-            </p>
-          </div>
-        </div>
-        <div>
           <amp-img
-            src="images/slide-5.png"
-            width="425"
-            height="412"
+            src="images/gallery-5.jpg"
+            width="400"
+            height="300"
             layout="responsive"
-            alt="Slide 5"
+            alt="Image 5"
+            class="grid-image"
           ></amp-img>
-          <div class="slide-text">
-            <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
-            <p>
-              The Classic 650 is able to adapt to any ride, any plan or lack
-              thereof, thanks to its flexible design, which offers the option of
-              a removable passenger seat and subframe.
-            </p>
-          </div>
         </div>
-      </amp-carousel>
-
-      <button class="tech-button">
-        <h4 class="tech-title">Technical specifications</h4>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 5L15 12L8 19"
-            stroke="#DA291C"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <div class="gallery-main">
-      <h3 class="gallery-title">Gallery</h3>
-
-      <!-- First full-width image -->
-      <div class="gallery">
-        <amp-img
-          src="images/gallery-1.webp"
-          width="800"
-          height="300"
-          layout="responsive"
-          alt="Main image"
-          class="grid-image"
-        ></amp-img>
-
-        <amp-img
-          src="images/gallery-2.jpg"
-          width="400"
-          height="192"
-          layout="responsive"
-          alt="Image 2"
-          class="grid-image"
-        ></amp-img>
-        <amp-img
-          src="images/gallery-3.jpg"
-          width="400"
-          height="300"
-          layout="responsive"
-          alt="Image 3"
-          class="grid-image"
-        ></amp-img>
-
-        <amp-img
-          src="images/gallery-4.jpg"
-          width="400"
-          height="300"
-          layout="responsive"
-          alt="Image 4"
-          class="grid-image"
-        ></amp-img>
-        <amp-img
-          src="images/gallery-5.jpg"
-          width="400"
-          height="300"
-          layout="responsive"
-          alt="Image 5"
-          class="grid-image"
-        ></amp-img>
       </div>
-    </div>
 
-    <div class="secondary-footer">
-      <a href="#">
-        <span>
+      <div class="form-section">
+        <div class="form-img-section">
+          <h3 class="form-head">
+            Twice the character. Twice the sophistication.
+          </h3>
           <amp-img
-            src="images/bike.png"
-            width="69"
-            height="40"
+            src="images/book-a-test-ride-motorcycle.webp"
+            width="360"
+            height="282"
             layout="responsive"
             alt="bike"
           ></amp-img>
-        </span>
-        <p>Order a Test Ride</p>
-      </a>
-      <a href="#">
-        <span>
-          <amp-img
-            src="images/map.png"
-            width="46"
-            height="44"
-            layout="responsive"
-            alt="map"
-          ></amp-img>
-        </span>
-        <p>Find a salon</p>
-      </a>
+        </div>
+
+        <form method="post" action-xhr="/submit-form" target="_top">
+          <h3 class="form-title">Order a Test Ride</h3>
+          <div class="form-item">
+            <label for="name">First Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your first name"
+              required
+            />
+            <!-- <span class="error">Please enter a name.</span> -->
+          </div>
+          <div class="form-item">
+            <label for="surname">Last Name</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="phone">Mobile number</label>
+            <div class="group-input">
+              <span>+7</span>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="postal">Postal code</label>
+            <input
+              type="text"
+              id="postal"
+              name="postal"
+              placeholder="Enter your postal code"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="state">State</label>
+            <input
+              type="text"
+              id="state"
+              name="state"
+              placeholder="Enter your state"
+              required
+            />
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="consent" required />
+            <label>
+              I accept
+              <a
+                href="https://www.royalenfield.com/ru/ru/legal/terms-and-conditions/"
+                target="_blank"
+                >the terms of the user agreement</a
+              >
+              and give my consent to the processing of
+              <a
+                href="https://www.royalenfield.com/ru/ru/legal/privacy-policy/"
+                target="_blank"
+                >personal data</a
+              >.
+            </label>
+          </div>
+          <div class="disclaimer">
+            Disclaimer: By signing this form/checking the box, you acknowledge
+            and agree that we may use the information you provide to contact you
+            via email, text message and phone calls to provide information
+            related to our product or service and/or for advertising and
+            marketing purposes. All information provided will be protected and
+            processed in accordance with our privacy policy.
+          </div>
+          <button class="submit-btn" type="submit">SEND</button>
+        </form>
+      </div>
+
+      <div class="secondary-footer">
+        <a href="#">
+          <span>
+            <amp-img
+              src="images/bike.png"
+              width="69"
+              height="40"
+              layout="responsive"
+              alt="bike"
+            ></amp-img>
+          </span>
+          <p>Order a Test Ride</p>
+        </a>
+        <a href="#">
+          <span>
+            <amp-img
+              src="images/map.png"
+              width="46"
+              height="44"
+              layout="responsive"
+              alt="map"
+            ></amp-img>
+          </span>
+          <p>Find a salon</p>
+        </a>
+      </div>
+
+      <footer>
+        <div class="social">
+          <p>Join the Conversation</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/RoyalEnfield/" target="_blank">
+              <amp-img
+                src="images/fb.png"
+                width="40"
+                height="37"
+                layout="responsive"
+                alt="Facebook"
+              ></amp-img>
+            </a>
+            <a href="https://x.com/royalenfield" target="_blank">
+              <amp-img
+                src="images/twitter.png"
+                width="36"
+                height="34"
+                layout="responsive"
+                alt="Twitter"
+              ></amp-img>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag"
+              target="_blank"
+            >
+              <amp-img
+                src="images/yt.png"
+                width="37"
+                height="30"
+                layout="responsive"
+                alt="Youtube"
+              ></amp-img>
+            </a>
+            <a href="https://www.instagram.com/royalenfield/" target="_blank">
+              <amp-img
+                src="images/insta.png"
+                width="36"
+                height="37"
+                layout="responsive"
+                alt="Instagram"
+              ></amp-img>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/royal-enfield/"
+              target="_blank"
+            >
+              <amp-img
+                src="images/linkedin.png"
+                width="35"
+                height="37"
+                layout="responsive"
+                alt="Linkedin"
+              ></amp-img>
+            </a>
+          </div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-links">
+            <h3>Motorcycles</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/classic-650/"
+                  >Classic 650</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com//ru/ru/motorcycles/bear-650/"
+                  >Bear 650</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/guerrilla-450/"
+                  >Guerrilla 450</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/shotgun-650/"
+                  >Shotgun 650</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/new-himalayan/"
+                  >New Himalayan 450</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/bullet-350/"
+                  >Bullet 350</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/super-meteor-650/"
+                  >Super Meteor 650</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/hunter-350/"
+                  >HNTR 350</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/classic-350/"
+                  >Classic 350</a
+                >
+              </li>
+              <li>
+                <a href="https://www.royalenfield.com/ru/ru/motorcycles/meteor/"
+                  >Meteor 350</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/interceptor/"
+                  >Interceptor 650</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/motorcycles/continental-gt/"
+                  >Continental GT</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Support</h3>
+            <ul>
+              <li>
+                <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/"
+                  >Contacts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.royalenfield.com/ru/ru/forms/book-test-ride/"
+                  >Order a Test Ride</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>About the company</h3>
+            <ul>
+              <li><a href="#">On the market since 1901</a></li>
+              <li><a href="#">Information about Eicher Motors</a></li>
+              <li><a href="#">Royal Enfield TV</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="copyright">
+          © 2025 Royal Enfield | Product appearance may vary from images shown
+        </p>
+        <div class="foot-nav">
+          <a href="https://www.royalenfield.com/ru/ru/legal/privacy-policy/"
+            >Confidentiality</a
+          >
+          <a
+            href="https://www.royalenfield.com/ru/ru/legal/terms-and-conditions/"
+            >Terms and Conditions</a
+          >
+          <a href="https://www.royalenfield.com/ru/ru/legal/cookie-policy/"
+            >Cookies</a
+          >
+        </div>
+      </footer>
     </div>
-
-    <footer>
-      <div class="social">
-        <p>Join the Conversation</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/RoyalEnfield/" target="_blank">
-            <amp-img
-              src="images/fb.png"
-              width="40"
-              height="37"
-              layout="responsive"
-              alt="Facebook"
-            ></amp-img>
-          </a>
-          <a href="https://x.com/royalenfield" target="_blank">
-            <amp-img
-              src="images/twitter.png"
-              width="36"
-              height="34"
-              layout="responsive"
-              alt="Twitter"
-            ></amp-img>
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCyxUUHqmz9IiAnrROJc0mag"
-            target="_blank"
-          >
-            <amp-img
-              src="images/yt.png"
-              width="37"
-              height="30"
-              layout="responsive"
-              alt="Youtube"
-            ></amp-img>
-          </a>
-          <a href="https://www.instagram.com/royalenfield/" target="_blank">
-            <amp-img
-              src="images/insta.png"
-              width="36"
-              height="37"
-              layout="responsive"
-              alt="Instagram"
-            ></amp-img>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/royal-enfield/"
-            target="_blank"
-          >
-            <amp-img
-              src="images/linkedin.png"
-              width="35"
-              height="37"
-              layout="responsive"
-              alt="Linkedin"
-            ></amp-img>
-          </a>
-        </div>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-links">
-          <h3>Motorcycles</h3>
-          <ul>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/classic-650/"
-                >Classic 650</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com//ru/ru/motorcycles/bear-650/"
-                >Bear 650</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/guerrilla-450/"
-                >Guerrilla 450</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/shotgun-650/"
-                >Shotgun 650</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/new-himalayan/"
-                >New Himalayan 450</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/bullet-350/"
-                >Bullet 350</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/super-meteor-650/"
-                >Super Meteor 650</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/hunter-350/"
-                >HNTR 350</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/classic-350/"
-                >Classic 350</a
-              >
-            </li>
-            <li>
-              <a href="https://www.royalenfield.com/ru/ru/motorcycles/meteor/"
-                >Meteor 350</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/interceptor/"
-                >Interceptor 650</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.royalenfield.com/ru/ru/motorcycles/continental-gt/"
-                >Continental GT</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>Support</h3>
-          <ul>
-            <li>
-              <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/"
-                >Contacts</a
-              >
-            </li>
-            <li>
-              <a href="https://www.royalenfield.com/ru/ru/forms/book-test-ride/"
-                >Order a Test Ride</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>About the company</h3>
-          <ul>
-            <li><a href="#">On the market since 1901</a></li>
-            <li><a href="#">Information about Eicher Motors</a></li>
-            <li><a href="#">Royal Enfield TV</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="copyright">
-        © 2025 Royal Enfield | Product appearance may vary from images shown
-      </p>
-      <div class="foot-nav">
-        <a href="https://www.royalenfield.com/ru/ru/legal/privacy-policy/"
-          >Confidentiality</a
-        >
-        <a href="https://www.royalenfield.com/ru/ru/legal/terms-and-conditions/"
-          >Terms and Conditions</a
-        >
-        <a href="https://www.royalenfield.com/ru/ru/legal/cookie-policy/"
-          >Cookies</a
-        >
-      </div>
-    </footer>
   </body>
 </html>
