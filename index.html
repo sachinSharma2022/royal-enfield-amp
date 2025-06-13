@@ -152,7 +152,6 @@
       }
 
       .amp-slider amp-carousel {
-        margin-top: 20px;
         height: 100%;
         border-radius: 8px;
         overflow: hidden;
@@ -161,18 +160,14 @@
 
       .amp-slider amp-img {
         width: 100%;
-        height: auto;
-        min-height: auto;
+        height: 650px;
         display: block;
+        scale: 0.9;
       }
 
       .amp-slider amp-img img {
-        height: auto;
-        min-height: auto;
-      }
-
-      .amp-slider .amp-carousel-slide {
-        height: auto;
+        display: block;
+        object-fit: contain;
       }
 
       .amp-slider .slide-text {
@@ -204,7 +199,7 @@
       }
 
       .amp-slider .amp-carousel-button {
-        top: 30%;
+        top: 0%;
       }
 
       @media (min-width: 768px) {
@@ -221,8 +216,9 @@
         .amp-slider {
           padding: 30px 10%;
         }
+
         .amp-slider amp-carousel {
-          max-height: 100vh;
+          max-height: 150px;
         }
 
         .amp-slider .slide-text {
@@ -250,6 +246,15 @@
       @media (max-width: 768px) {
         header {
           height: 50px;
+        }
+        .amp-slider {
+          padding: 30px 0 0;
+        }
+        .amp-slider amp-img {
+          width: 100%;
+          height: 250px;
+          display: block;
+          /* scale: 1; */
         }
       }
 
@@ -773,6 +778,10 @@
         .row-3 {
           display: flex;
         }
+
+        .secondary-footer a p {
+          font-size: 16px;
+        }
       }
 
       .secondary-footer {
@@ -780,7 +789,7 @@
         display: flex;
         gap: 20px;
         justify-content: space-evenly;
-        padding: 25px;
+        padding: 20px;
         font-size: 16px;
       }
 
@@ -788,12 +797,14 @@
         align-items: center;
         background: transparent;
         color: white;
-        padding: 17px 12px;
+        padding: 10px;
         text-decoration: none;
         font-weight: 600;
       }
       .secondary-footer a p {
         color: #b4b2b2;
+        margin: 0;
+        font-size: 14px;
       }
       .secondary-footer a:hover p {
         color: #da291c;
@@ -841,6 +852,7 @@
           object-fit: contain;
           min-width: 100px;
           height: 70px;
+          scale: 0.8;
         }
 
         .secondary-footer a {
@@ -1115,7 +1127,7 @@
 
       @media (max-width: 768px) {
         .tech-button {
-          margin-top: 30px;
+          margin-top: -20px;
         }
         .thumbs-carousel [horizontal="true"] {
           width: 78%;
@@ -1192,12 +1204,7 @@
       }
 
       .submit-btn {
-        background: linear-gradient(
-          121deg,
-          #7b7b7e,
-          #5e5e63 35%,
-          #464747
-        ) !important;
+        background: linear-gradient(121deg, #7b7b7e, #5e5e63 35%, #464747);
         border: none;
         color: #daaa00;
         font-weight: bold;
@@ -1779,9 +1786,17 @@
 
       <!-- AMP Carousel -->
       <div class="amp-slider">
+        <amp-img
+          src="images/highlighted-bike.png"
+          width="425"
+          height="412"
+          layout="responsive"
+          alt="Slide 5"
+        ></amp-img>
+
         <amp-carousel
           width="600"
-          height="1100"
+          height="600"
           layout="responsive"
           type="slides"
           autoplay
@@ -1789,13 +1804,6 @@
           loop
         >
           <div class="amp-slider-item">
-            <amp-img
-              src="images/slide-1.png"
-              width="430"
-              height="423"
-              layout="responsive"
-              alt="Slide 1"
-            ></amp-img>
             <div class="slide-text">
               <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
               <p>
@@ -1806,13 +1814,6 @@
             </div>
           </div>
           <div class="amp-slider-item">
-            <amp-img
-              src="images/slide-2.png"
-              width="421"
-              height="412"
-              layout="responsive"
-              alt="Slide 2"
-            ></amp-img>
             <div class="slide-text">
               <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
               <p>
@@ -1823,13 +1824,6 @@
             </div>
           </div>
           <div class="amp-slider-item">
-            <amp-img
-              src="images/slide-3.png"
-              width="421"
-              height="415"
-              layout="responsive"
-              alt="Slide 3"
-            ></amp-img>
             <div class="slide-text">
               <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
               <p>
@@ -1840,13 +1834,6 @@
             </div>
           </div>
           <div class="amp-slider-item">
-            <amp-img
-              src="images/slide-4.png"
-              width="422"
-              height="407"
-              layout="responsive"
-              alt="Slide 4"
-            ></amp-img>
             <div class="slide-text">
               <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
               <p>
@@ -1857,13 +1844,6 @@
             </div>
           </div>
           <div class="amp-slider-item">
-            <amp-img
-              src="images/slide-5.png"
-              width="425"
-              height="412"
-              layout="responsive"
-              alt="Slide 5"
-            ></amp-img>
             <div class="slide-text">
               <h3>REMOVABLE PASSENGER SEAT AND SUBFRAME</h3>
               <p>
