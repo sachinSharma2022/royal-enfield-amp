@@ -134,12 +134,19 @@
       h2 {
         color: #fff;
         font-size: 40px;
-        line-height: 1.5;
+        line-height: 1.3;
       }
 
       @media (max-width: 768px) {
         h2 {
           font-size: 28px;
+          line-height: 1.2;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        h2 {
+          font-size: 38px;
           line-height: 1.2;
         }
       }
@@ -214,7 +221,7 @@
           font-size: 14px;
         }
         .amp-slider {
-          padding: 30px 10%;
+          padding: 30px 20px;
         }
 
         .amp-slider amp-carousel {
@@ -224,6 +231,12 @@
         .amp-slider .slide-text {
           width: 80%;
           margin: 0 auto;
+        }
+      }
+
+      @media (min-width: 1367px) {
+        .amp-slider {
+          padding: 30px 10%;
         }
       }
 
@@ -254,7 +267,6 @@
           width: 100%;
           height: 250px;
           display: block;
-          /* scale: 1; */
         }
       }
 
@@ -328,7 +340,7 @@
         height: 15px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .right-nav .login-text {
           display: none;
         }
@@ -383,6 +395,11 @@
         display: inline-flex;
         align-items: center;
         gap: 3px;
+        transition: all 0.3s ease;
+      }
+
+      .desktop-nav a:hover {
+        color: #da291c;
       }
 
       .desktop-nav a amp-img {
@@ -403,13 +420,18 @@
         margin-left: 8px;
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: 991px) {
         .menu-btn {
           display: none;
         }
 
         nav {
           display: block;
+        }
+      }
+
+      @media (min-width: 1367px) {
+        nav {
           margin-right: 11rem;
         }
       }
@@ -556,6 +578,10 @@
         color: #fff;
         padding: 80px 10%;
         position: relative;
+      }
+
+      .amp-engine h2 {
+        margin-bottom: 40px;
       }
 
       .engine-image {
@@ -714,7 +740,7 @@
         display: flex;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 1366px) {
         .gallery-main {
           padding: 30px 20px;
         }
@@ -725,7 +751,7 @@
         }
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: 1367px) {
         .gallery {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -806,14 +832,28 @@
         margin: 0;
         font-size: 14px;
       }
+
+      .secondary-footer a .arrow-link amp-img img {
+        filter: contrast(0) brightness(100%);
+      }
       .secondary-footer a:hover p {
         color: #da291c;
       }
 
-      .secondary-footer a span amp-img {
+      .secondary-footer a:hover .arrow-link amp-img img {
+        filter: none;
+      }
+
+      @media (min-width: 1367px) {
+        .secondary-footer a .secondary-footer-icon amp-img {
+          min-width: 130px;
+        }
+      }
+
+      .secondary-footer a .secondary-footer-icon amp-img {
         margin: auto;
         object-fit: contain;
-        min-width: 130px;
+        width: 130px;
         height: 100px;
       }
 
@@ -1096,6 +1136,25 @@
         background: #100e14;
         padding: 50px 10%;
       }
+
+      @media (min-width: 1024px) and (max-width: 1366px) {
+        .colors-section {
+          padding: 50px 20px;
+        }
+
+        .color-carousel-desktop {
+          flex-direction: column;
+        }
+
+        .carousel-desktop-thumb [horizontal="true"] {
+          margin-top: -70%;
+        }
+        .carousel-desktop-thumb {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+
       .tech-title {
         color: #da291c;
         text-align: center;
@@ -1149,9 +1208,19 @@
           padding: 30px 20px;
         }
         .form-section {
-          padding: 30px 0px 80px;
+          padding: 30px 0px 50px;
           display: grid;
           grid-template-columns: 1fr;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        .thumbs-carousel {
+          width: 70%;
+          margin-top: -13%;
+        }
+        .form-section {
+          padding: 30px 20px 50px;
         }
       }
 
@@ -1161,7 +1230,7 @@
         gap: 15px;
         padding: 20px 20px 40px;
         font-family: "Montserrat", sans-serif;
-        background-color: #181818;
+        background-color: rgb(40, 40, 40);
       }
 
       input {
@@ -1231,7 +1300,8 @@
       }
 
       .form-img-section {
-        padding: 0 20px 50px;
+        padding: 20px 50px;
+        background-color: #181818;
       }
 
       .form-title {
@@ -1316,7 +1386,7 @@
           width: 50px;
         }
         .form-img-section {
-          padding: 0 20px 50px;
+          padding: 20px 20px;
         }
 
         .form-img-section h2 {
@@ -1338,7 +1408,7 @@
         }
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: 991px) {
         .banner-image-mobile {
           display: none;
         }
@@ -1349,6 +1419,36 @@
 
         .hide-on-mobile {
           display: none;
+        }
+      }
+
+      .arrow-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        gap: 0 5px;
+        margin-top: 10px;
+      }
+
+      .arrow-link amp-img img {
+        max-width: 10px;
+        max-height: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .arrow-link amp-img {
+          display: none;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        .slide-content {
+          scale: 1.8;
+          margin-top: -200px;
+        }
+        .model-name {
+          margin-top: -40px;
         }
       }
     </style>
@@ -1388,22 +1488,34 @@
 
         <nav>
           <ul class="desktop-nav">
-            <li><a href="#">Motorcycles</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">Cloth</a></li>
             <li>
-              <a href="#">
+              <a href="https://www.royalenfield.com/ru/ru/motorcycles/"
+                >Motorcycles</a
+              >
+            </li>
+            <li>
+              <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/"
+                >Contacts</a
+              >
+            </li>
+            <li>
+              <a href="https://www.royalenfield.com/ru/ru/apparel/">Cloth</a>
+            </li>
+            <li>
+              <a href="https://www.royalenfield.com/ru/ru/our-world/">
                 Our World
-                <amp-img
+                <!-- <amp-img
                   src="images/arrow.png"
                   width="20"
                   height="18"
                   layout="fixed"
                   alt="Login"
-                ></amp-img>
+                ></amp-img> -->
               </a>
             </li>
-            <li><a href="#">Support</a></li>
+            <li>
+              <a href="https://www.royalenfield.com/ru/ru/support/">Support</a>
+            </li>
           </ul>
         </nav>
 
@@ -2034,7 +2146,7 @@
 
       <div class="secondary-footer">
         <a href="https://www.royalenfield.com/ru/ru/forms/book-test-ride/">
-          <span>
+          <span class="secondary-footer-icon">
             <amp-img
               src="images/bike.png"
               width="69"
@@ -2053,10 +2165,19 @@
             ></amp-img>
           </span>
 
-          <p>Order a Test Ride</p>
+          <span class="arrow-link">
+            <p>Order a Test Ride</p>
+            <amp-img
+              src="images/caret-right.svg"
+              width="12"
+              height="12"
+              layout="fixed"
+              alt="bike"
+            ></amp-img>
+          </span>
         </a>
         <a href="https://www.royalenfield.com/ru/ru/locate-us/dealers/">
-          <span>
+          <span class="secondary-footer-icon">
             <amp-img
               src="images/map.png"
               width="46"
@@ -2074,7 +2195,16 @@
               class="desktop-icon"
             ></amp-img>
           </span>
-          <p>Find a salon</p>
+          <span class="arrow-link">
+            <p>Find a salon</p>
+            <amp-img
+              src="images/caret-right.svg"
+              width="12"
+              height="12"
+              layout="fixed"
+              alt="bike"
+            ></amp-img>
+          </span>
         </a>
       </div>
 
