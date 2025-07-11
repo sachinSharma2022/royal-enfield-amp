@@ -271,9 +271,12 @@
 
       .amp-slider .amp-carousel-button {
         top: 0%;
+        width: 34px;
+        height: 34px;
+        border-radius: 100px;
+        margin: 0;
+        background-color: #3c3c3c;
         border: 1px solid #575757;
-        width: 32px;
-        height: 32px;
       }
 
       .amp-slider .amp-carousel-button:focus {
@@ -1075,6 +1078,18 @@
         padding: 50px 10%;
       }
 
+      .colors-section .amp-carousel-button {
+        border-radius: 100px;
+        margin: 0;
+        background-color: #3c3c3c;
+        border: 1px solid #575757;
+        margin-top: -10px;
+      }
+
+      .colors-section .amp-carousel-button:focus {
+        outline: none;
+      }
+
       @media (min-width: 1024px) and (max-width: 1366px) {
         .colors-section {
           padding: 50px 20px;
@@ -1247,6 +1262,13 @@
       .form-img-section {
         padding: 20px 50px;
         background-color: #181818;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .form-img-section h2 {
+        margin-bottom: 20px;
       }
 
       .form-title {
@@ -2282,14 +2304,16 @@
 
       <section class="form-section">
         <div class="form-img-section">
-          <h2>Twice the character. Twice the sophistication.</h2>
-          <amp-img
-            src="images/book-a-test-ride-motorcycle.webp"
-            width="360"
-            height="282"
-            layout="responsive"
-            alt="bike"
-          ></amp-img>
+          <div>
+            <h2>Twice the character. Twice the sophistication.</h2>
+            <amp-img
+              src="images/book-a-test-ride-motorcycle.webp"
+              width="360"
+              height="282"
+              layout="responsive"
+              alt="bike"
+            ></amp-img>
+          </div>
         </div>
 
         <form method="post" action-xhr="/submit-form" target="_top">
@@ -2365,6 +2389,15 @@
             />
           </div>
 
+          <div class="disclaimer">
+            Disclaimer: By signing this form/checking the box, you acknowledge
+            and agree that we may use the information you provide to contact you
+            via email, text message and phone calls to provide information
+            related to our product or service and/or for advertising and
+            marketing purposes. All information provided will be protected and
+            processed in accordance with our privacy policy.
+          </div>
+
           <div class="checkbox">
             <input type="checkbox" id="consent" name="consent" required />
             <label for="consent">
@@ -2381,15 +2414,6 @@
                 >personal data</a
               >.
             </label>
-          </div>
-
-          <div class="disclaimer">
-            Disclaimer: By signing this form/checking the box, you acknowledge
-            and agree that we may use the information you provide to contact you
-            via email, text message and phone calls to provide information
-            related to our product or service and/or for advertising and
-            marketing purposes. All information provided will be protected and
-            processed in accordance with our privacy policy.
           </div>
 
           <button
