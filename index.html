@@ -918,12 +918,12 @@
       .color-carousel-desktop {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         position: relative;
         width: 100%;
       }
 
       .color-carousel-desktop .slide-content {
-        height: 85%;
       }
 
       .carousel-desktop-slide {
@@ -932,7 +932,8 @@
       }
 
       .carousel-desktop-thumb {
-        width: 74%;
+        width: 39vw;
+        margin-top: -20vh;
       }
 
       .carousel-desktop-thumb [horizontal="true"] {
@@ -990,7 +991,7 @@
       }
 
       .model-name {
-        margin-top: 50px;
+        margin-top: 0px;
         font-size: 16px;
         font-weight: bold;
         color: #ffffff;
@@ -1083,7 +1084,7 @@
         margin: 0;
         background-color: #3c3c3c;
         border: 1px solid #575757;
-        margin-top: -10px;
+        /* margin-top: -10px; */
       }
 
       .colors-section .amp-carousel-button:focus {
@@ -1100,7 +1101,7 @@
         }
 
         .carousel-desktop-thumb [horizontal="true"] {
-          margin-top: -70%;
+          margin-top: 0%;
         }
         .carousel-desktop-thumb {
           width: 70%;
@@ -1446,6 +1447,20 @@
       .color-carousel-desktop [horizontal="true"]::-webkit-scrollbar {
         display: none;
       }
+
+      .slider-controls {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .carousel-desktop-text {
+        position: absolute;
+        height: 80px;
+        padding: 0;
+        left: 0;
+        right: 0;
+      }
     </style>
   </head>
 
@@ -1667,7 +1682,7 @@
           <amp-carousel
             id="bikeCarouselDesktop"
             width="600"
-            height="500"
+            height="400"
             layout="responsive"
             type="slides"
             class="carousel-desktop-slide no-controls"
@@ -1677,15 +1692,10 @@
               <amp-img
                 src="/images/black-chrome.png"
                 width="600"
-                height="500"
+                height="400"
                 layout="fixed"
                 alt="Black Chrome"
               ></amp-img>
-
-              <div class="text-head">
-                <div class="model-name">Black Chrome</div>
-                <div class="model-number">RUB 714,000*</div>
-              </div>
             </div>
 
             <!-- Slide 1 -->
@@ -1693,14 +1703,10 @@
               <amp-img
                 src="/images/teal-bullet.png"
                 width="600"
-                height="500"
+                height="400"
                 layout="fixed"
                 alt="Teal"
               ></amp-img>
-              <div class="text-head">
-                <div class="model-name">Teal</div>
-                <div class="model-number">RUB 704,000*</div>
-              </div>
             </div>
 
             <!-- Slide 2 -->
@@ -1708,14 +1714,10 @@
               <amp-img
                 src="/images/vallum-red-bullet.png"
                 width="600"
-                height="500"
+                height="400"
                 layout="fixed"
                 alt="Vallum Red"
               ></amp-img>
-              <div class="text-head">
-                <div class="model-name">Vallum Red</div>
-                <div class="model-number">RUB 704,000*</div>
-              </div>
             </div>
 
             <!-- Slide 3 -->
@@ -1723,85 +1725,116 @@
               <amp-img
                 src="/images/brunting-thorpe-blue.png"
                 width="600"
-                height="500"
+                height="400"
                 layout="fixed"
                 alt="Vallum Red"
               ></amp-img>
+            </div>
+          </amp-carousel>
+
+          <div class="slider-controls">
+            <amp-carousel
+              id="bikeCarouselContent"
+              width="600"
+              layout="fixed"
+              type="slides"
+              class="carousel-desktop-text no-controls"
+            >
+              <!-- Slide 0 -->
+              <div class="text-head">
+                <div class="model-name">Black Chrome</div>
+                <div class="model-number">RUB 714,000*</div>
+              </div>
+
+              <!-- Slide 1 -->
+              <div class="text-head">
+                <div class="model-name">Teal</div>
+                <div class="model-number">RUB 704,000*</div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="text-head">
+                <div class="model-name">Vallum Red</div>
+                <div class="model-number">RUB 704,000*</div>
+              </div>
+
+              <!-- Slide 3 -->
               <div class="text-head">
                 <div class="model-name">Vallum Red</div>
                 <div class="model-number">RUB 694,000*</div>
               </div>
-            </div>
-          </amp-carousel>
+            </amp-carousel>
 
-          <amp-carousel
-            class="carousel-desktop-thumb"
-            width="130"
-            height="90"
-            layout="responsive"
-            type="carousel"
-            controls
-          >
-            <button
-              on="tap:bikeCarouselDesktop.goToSlide(index=0)"
-              class="thumb-button"
+            <!-- Controls -->
+            <amp-carousel
+              class="carousel-desktop-thumb"
+              width="130"
+              height="90"
+              layout="responsive"
+              type="carousel"
+              controls
             >
-              <div class="thumb-image">
-                <amp-img
-                  src="/images/black-crome-tank.png"
-                  width="130"
-                  height="90"
-                  layout="fixed"
-                  alt="Black Tank"
-                ></amp-img>
-              </div>
-            </button>
+              <button
+                on="tap:bikeCarouselDesktop.goToSlide(index=0),bikeCarouselContent.goToSlide(index=0)"
+                class="thumb-button"
+              >
+                <div class="thumb-image">
+                  <amp-img
+                    src="/images/black-crome-tank.png"
+                    width="130"
+                    height="90"
+                    layout="fixed"
+                    alt="Black Tank"
+                  ></amp-img>
+                </div>
+              </button>
 
-            <button
-              on="tap:bikeCarouselDesktop.goToSlide(index=1)"
-              class="thumb-button"
-            >
-              <div class="thumb-image">
-                <amp-img
-                  src="/images/teal-tang.png"
-                  width="130"
-                  height="90"
-                  layout="fixed"
-                  alt="Teal Tank"
-                ></amp-img>
-              </div>
-            </button>
+              <button
+                on="tap:bikeCarouselDesktop.goToSlide(index=1),bikeCarouselContent.goToSlide(index=1)"
+                class="thumb-button"
+              >
+                <div class="thumb-image">
+                  <amp-img
+                    src="/images/teal-tang.png"
+                    width="130"
+                    height="90"
+                    layout="fixed"
+                    alt="Teal Tank"
+                  ></amp-img>
+                </div>
+              </button>
 
-            <button
-              on="tap:bikeCarouselDesktop.goToSlide(index=2)"
-              class="thumb-button"
-            >
-              <div class="thumb-image">
-                <amp-img
-                  src="/images/vallum-red-tank.png"
-                  width="130"
-                  height="90"
-                  layout="fixed"
-                  alt="Red Tank"
-                ></amp-img>
-              </div>
-            </button>
+              <button
+                on="tap:bikeCarouselDesktop.goToSlide(index=2),bikeCarouselContent.goToSlide(index=2)"
+                class="thumb-button"
+              >
+                <div class="thumb-image">
+                  <amp-img
+                    src="/images/vallum-red-tank.png"
+                    width="130"
+                    height="90"
+                    layout="fixed"
+                    alt="Red Tank"
+                  ></amp-img>
+                </div>
+              </button>
 
-            <button
-              on="tap:bikeCarouselDesktop.goToSlide(index=3)"
-              class="thumb-button"
-            >
-              <div class="thumb-image">
-                <amp-img
-                  src="/images/bruntingthorpe-blue-tank.png"
-                  width="130"
-                  height="90"
-                  layout="fixed"
-                  alt="Blue Tank"
-                ></amp-img>
-              </div>
-            </button>
-          </amp-carousel>
+              <button
+                on="tap:bikeCarouselDesktop.goToSlide(index=3),bikeCarouselContent.goToSlide(index=3)"
+                class="thumb-button"
+              >
+                <div class="thumb-image">
+                  <amp-img
+                    src="/images/bruntingthorpe-blue-tank.png"
+                    width="130"
+                    height="90"
+                    layout="fixed"
+                    alt="Blue Tank"
+                  ></amp-img>
+                </div>
+              </button>
+            </amp-carousel>
+          </div>
         </div>
       </section>
 
