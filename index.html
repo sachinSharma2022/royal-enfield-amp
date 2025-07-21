@@ -2352,7 +2352,7 @@
           <div>
             <h2>Twice the character. Twice the sophistication.</h2>
             <amp-img
-              src="images/book-a-test-ride-motorcycle.webp"
+              src="/content/dam/amp/book-a-test-ride-motorcycle.webp"
               width="360"
               height="282"
               layout="responsive"
@@ -2361,101 +2361,138 @@
           </div>
         </div>
 
-        <div class="form-inside-section">
+        <form method="post" 
+          action-xhr="https://api-uat2.royalenfield.com/v3/core/bikes/book-test-ride" 
+          target="_top"
+          custom-validation-reporting="show-first-on-submit">
           <h3 class="form-title">Order a Test Ride</h3>
-          <form method="post" action-xhr="/api/book-test-ride" target="_top">
-            <div class="form-item">
-              <label for="name">First Name</label>
+
+          <input type="hidden" name="clientId" value="abc">
+          <input type="hidden" name="dealerName" value="abc">
+          <input type="hidden" name="dealerCode" value="abc">
+          <input type="hidden" name="modelCode" value="abc">
+          <input type="hidden" name="bikeModelName" value="abbc">
+          <input type="hidden" name="leadDynamics" value="abc">
+          <input type="hidden" name="cityName" value="abc">
+          <input type="hidden" name="bike" value="abc">
+          <input type="hidden" name="buyPlanDate" value="abc">
+
+
+          <input type="hidden" name="x-custom-country" value="in">
+          <input type="hidden" name="x-custom-language" value="en">
+
+          <div class="form-item">
+            <label for="name">First Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your first name"
+              required
+            />
+            <span visible-when-invalid="valueMissing" validation-for="name">Please Enter your first Name</span>
+          </div>
+
+          <div class="form-item">
+            <label for="surname">Last Name</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              placeholder="Enter your last name"
+              required
+            />
+            <span visible-when-invalid="valueMissing" validation-for="surname">Please Enter your Surname Name</span>
+          </div>
+
+          <div class="form-item">
+            <label for="phone">Mobile number</label>
+            <div class="group-input">
+              <span aria-hidden="true">+7</span>
               <input
-                type="text"
-                id="name"
-                name="fName"
-                placeholder="Enter your first name"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your mobile number"
                 required
+                aria-label="Mobile number starting with country code +7"
               />
             </div>
-            <div class="form-item">
-              <label for="surname">Last Name</label>
-              <input
-                type="text"
-                id="surname"
-                name="lName"
-                placeholder="Enter your last name"
-                required
-              />
-            </div>
-            <div class="form-item">
-              <label for="phone">Mobile number</label>
-              <div class="group-input">
-                <span aria-hidden="true">+7</span>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="mobile"
-                  placeholder="Enter your mobile number"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-item">
-              <label for="email">E-mail</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email address"
-                required
-              />
-            </div>
-            <div class="form-item">
-              <label for="state">State</label>
-              <input
-                type="text"
-                id="state"
-                name="stateName"
-                placeholder="Enter your state"
-                required
-              />
-            </div>
-            <input type="hidden" name="callingCode" value="+7" />
-            <div class="disclaimer">
-              Disclaimer: By signing this form/checking the box, you acknowledge
-              and agree that we may use the information you provide to contact
-              you via email, text message and phone calls to provide information
-              related to our product or service and/or for advertising and
-              marketing purposes. All information provided will be protected and
-              processed in accordance with our privacy policy.
-            </div>
-            <div class="checkbox">
-              <input type="checkbox" id="consent" name="consent" required />
-              <label for="consent">
-                I accept
-                <a
-                  href="https://www.royalenfield.com/ru/ru/legal/terms-and-conditions/"
-                  target="_blank"
-                  >the terms of the user agreement</a
-                >
-                and give my consent to the processing of
-                <a
-                  href="https://www.royalenfield.com/ru/ru/legal/privacy-policy/"
-                  target="_blank"
-                  >personal data</a
-                >.
-              </label>
-            </div>
-            <button class="submit-btn" type="submit">SEND</button>
-            <div submit-success style="background: red">
-              <template type="amp-mustache">
-                <p>Thank you! Your test ride request has been submitted.</p>
-              </template>
-            </div>
-            <div submit-error>
-              <template type="amp-mustache">
-                <p>Oops! Something went wrong. Please try again.</p>
-              </template>
-            </div>
-          </form>
-        </div>
+          </div>
+          <span visible-when-invalid="valueMissing" validation-for="phone">Please Enter your Phone Number</span>
+
+          <div class="form-item">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <span visible-when-invalid="valueMissing" validation-for="email">Please Enter a correct email id</span>
+            <span visible-when-invalid="typeMismatch" validation-for="email">Please Enter a correct email id</span>
+          </div>
+          <!-- 
+          <div class="form-item">
+            <label for="postal">Postal code</label>
+            <input
+              type="text"
+              id="postal"
+              name="postal"
+              placeholder="Enter your postal code"
+              required
+            />
+          </div> -->
+
+          <div class="form-item">
+            <label for="state">State</label>
+            <input
+              type="text"
+              id="state"
+              name="state"
+              placeholder="Enter your state"
+              required
+            />
+            <span visible-when-invalid="valueMissing" validation-for="state">Please Enter your State</span>
+          </div>
+
+          <div class="disclaimer">
+            Disclaimer: By signing this form/checking the box, you acknowledge
+            and agree that we may use the information you provide to contact you
+            via email, text message and phone calls to provide information
+            related to our product or service and/or for advertising and
+            marketing purposes. All information provided will be protected and
+            processed in accordance with our privacy policy.
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">
+              I accept
+              <a
+                href="https://www.royalenfield.com/ru/ru/legal/terms-and-conditions/"
+                target="_blank"
+                >the terms of the user agreement</a
+              >
+              and give my consent to the processing of
+              <a
+                href="https://www.royalenfield.com/ru/ru/legal/privacy-policy/"
+                target="_blank"
+                >personal data</a
+              >.
+            </label>
+            <span visible-when-invalid="valueMissing" validation-for="consent">Please check the checkbox</span>
+          </div>
+
+          <button
+            class="submit-btn"
+            type="submit"
+            aria-label="Submit form to order a test ride"
+          >
+            SEND
+          </button>
+        </form>
       </section>
 
       <section class="secondary-footer">
